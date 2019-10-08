@@ -39,7 +39,7 @@ public class Departamento implements Serializable {
 	}
 
 	public void setDepartamentoId(int departamentoId) {
-		DepartamentoId = departamentoId;
+		this.DepartamentoId = departamentoId;
 	}
 
 	public String getNDepartamento() {
@@ -47,7 +47,7 @@ public class Departamento implements Serializable {
 	}
 
 	public void setNDepartamento(String nDepartamento) {
-		NDepartamento = nDepartamento;
+		this.NDepartamento = nDepartamento;
 	}
 
 	

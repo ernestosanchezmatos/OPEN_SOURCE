@@ -54,7 +54,7 @@ public class Ciudad implements Serializable{
 	}
 
 	public void setNCiudad(String nCiudad) {
-		NCiudad = nCiudad;
+		this.NCiudad = nCiudad;
 	}
 
 	public Provincia getProvincia() {
