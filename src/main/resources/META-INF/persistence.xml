@@ -4,6 +4,8 @@
 	
 	<jta-data-source>java:/webDS12</jta-data-source>
 		<class>entity.Departamento</class>
+		<class>entity.Servicio</class>
+			<class>entity.Equipo</class>
 	<class>entity.Provincia</class>
 	<class>entity.Ciudad</class>
 	<class>entity.Distrito</class>
@@ -11,7 +13,13 @@
 	<class>entity.Persona</class>
 	<class>entity.Empleado</class>
 	<class>entity.Cliente</class>
-
+<class>entity.Lugar_Personas</class>
+	<class>entity.Orden</class>
+	<class>entity.Reporte</class>
+	<class>entity.Modelo</class>
+	<class>entity.Ejemplar</class>
+	<class>entity.Orden_Detalle</class>
+	<class>entity.Usuario</class>
 	<properties>
 	<property name="javax.persistence.schema-generation.database.action" value="none"/>
 	</properties>
