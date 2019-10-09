@@ -9,23 +9,23 @@ import javax.persistence.PersistenceContext;
 import javax.persistence.Query;
 import javax.transaction.Transactional;
 
-import entity.Category;
+import entity.Provincia;
 
-public class CategoryRepository implements ICategoryRepository,Serializable {
+public class ProvinciaRepository implements IProvinciaRepository,Serializable {
 
 	private static final long serialVersionUID = 1L;
-	@PersistenceContext(name="Semana7")
+	@PersistenceContext(name="OPEN_SOURCE")
 	private EntityManager em;
 	
-	public CategoryRepository() {
+	public ProvinciaRepository() {
 		// TODO Auto-generated constructor stub
 	}
 
 	@Override
 	@Transactional
-	public boolean insert(Category category) {
+	public boolean insert(Provincia Provincia) {
 		try {
-			em.persist(category);
+			em.persist(Provincia);
 			return true;
 		} catch (Exception e) {
 			System.out.println(e.getMessage());
@@ -35,40 +35,40 @@ public class CategoryRepository implements ICategoryRepository,Serializable {
 
 	@Override
 	@Transactional
-	public boolean update(Category category) {
-		try {
-			em.merge(category);
+	public boolean update(Provincia Provincia) {
+		/*try {
+			em.merge(Provincia);
 			return true; 
 		} catch (Exception e) {
 			System.out.println(e.getMessage());
 		}
-		
+		*/
 		return false;
 	}
 
 	@Override
 	@Transactional
 	public boolean delete(int id) {
-		Category cat = new Category();
+		/*Provincia cat = new Provincia();
 		
 		try {
-			cat = em.getReference(Category.class, id);
+			cat = em.getReference(Provincia.class, id);
 			em.remove(cat);
 			return true;
 		} catch (Exception e) {
 			System.out.println(e.getMessage());
-		}
+		} */
 		return false;
 	}
 	
 	
 	@SuppressWarnings("unchecked")
 	@Override
-	public List<Category> ListAll() {
-	List<Category> lista= new ArrayList<Category>();
+	public List<Provincia> ListAll() {
+	List<Provincia> lista= new ArrayList<Provincia>();
 	try {
-		Query q = em.createQuery("select c from Category c");
-		lista= (List<Category>)q.getResultList();
+		Query q = em.createQuery("select c from Provincia c");
+		lista= (List<Provincia>)q.getResultList();
 	} catch (Exception e) {
 		System.out.println(e.getMessage());
 	}
@@ -76,10 +76,10 @@ public class CategoryRepository implements ICategoryRepository,Serializable {
 	}
 
 	@Override
-	public Category FinbyId(int id) {
-		Category cat = new Category();
+	public Provincia FinbyId(int id) {
+		Provincia cat = new Provincia();
 		try {
-			cat = em.find(Category.class, id);
+			cat = em.find(Provincia.class, id);
 		} catch (Exception e) {
 			System.out.println(e.getMessage());
 		}
@@ -88,15 +88,16 @@ public class CategoryRepository implements ICategoryRepository,Serializable {
 
 	@SuppressWarnings("unchecked")
 	@Override
-	public List<Category> findbyname(Category category) {
-		List<Category> lista= new ArrayList<Category>();
+	public List<Provincia> findbyname(Provincia Provincia) {
+		List<Provincia> lista= new ArrayList<Provincia>();
+		/*List<Provincia> lista= new ArrayList<Provincia>();
 		try {
-			Query q = em.createQuery("select c from Category c where c.nameCategory like ?1");
-			q.setParameter(1, "%"+category.getNameCategory()+"%");
-			lista= (List<Category>)q.getResultList();
+			Query q = em.createQuery("select c from Provincia c where c.nameProvincia like ?1");
+			q.setParameter(1, "%"+Provincia.getNameProvincia()+"%");
+			lista= (List<Provincia>)q.getResultList();
 		} catch (Exception e) {
 			System.out.println(e.getMessage());
-		}
+		}*/
 			return lista;
 	}
 

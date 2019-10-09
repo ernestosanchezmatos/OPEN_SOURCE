@@ -11,18 +11,18 @@ import javax.transaction.Transactional;
 
 import entity.Departamento;
 
-public class ProductRepository implements IProductRepository,Serializable{
+public class DepartamentoRepository implements IDepartamentoRepository,Serializable{
 
 	private static final long serialVersionUID = 1L;
-	@PersistenceContext(name="Semana7")
+	@PersistenceContext(name="OPEN_SOURCE")
 	private EntityManager em;
 	
 	@Override
 	@Transactional
-	public boolean insert(Departamento product) {
+	public boolean insert(Departamento Departamento) {
 		
 		try {
-			em.persist(product);
+			em.persist(Departamento);
 			return true;
 		} catch (Exception e) {
 
@@ -34,19 +34,21 @@ public class ProductRepository implements IProductRepository,Serializable{
 
 	@Override
 	@Transactional
-	public boolean update(Departamento product) {
-		try {
-			em.merge(product);
+	public boolean update(Departamento Departamento) {
+		/*try {
+			em.merge(Departamento);
+			return true;
 		} catch (Exception e) {
 
 			System.out.println(e.getMessage());
-		}
+		}*/
 		return false;
 	}
 
 	@Override
 	@Transactional
 	public boolean delete(int id) {
+		/*
 		Departamento prod = new Departamento();
 		try {
 			
@@ -56,7 +58,7 @@ public class ProductRepository implements IProductRepository,Serializable{
 		} catch (Exception e) {
 
 			System.out.println(e.getMessage());
-		}
+		}*/
 		return false;
 	}
 
@@ -65,7 +67,7 @@ public class ProductRepository implements IProductRepository,Serializable{
 	public List<Departamento> ListAll() {
 		List<Departamento> lista= new ArrayList<Departamento>();
 		try {
-			Query q = em.createQuery("select c from Product c");
+			Query q = em.createQuery("select c from Departamento c");
 			lista = (List<Departamento>)q.getResultList();
 		} catch (Exception e) {
 
@@ -91,17 +93,18 @@ public class ProductRepository implements IProductRepository,Serializable{
 
 	@SuppressWarnings("unchecked")
 	@Override
-	public List<Departamento> findbyname(Departamento product) {
+	public List<Departamento> findbyname(Departamento Departamento) {
 		List<Departamento> lista= new ArrayList<Departamento>();
+		/*List<Departamento> lista= new ArrayList<Departamento>();
 		try {
-			Query q = em.createQuery("select c from Product c where c.nameProduct like ?1");
-			q.setParameter(1, "%"+product.getNameProduct()+"%");
+			Query q = em.createQuery("select c from Departamento c where c.nameDepartamento like ?1");
+			q.setParameter(1, "%"+Departamento.getNameDepartamento()+"%");
 			lista = (List<Departamento>)q.getResultList();
 		} catch (Exception e) {
 
 			System.out.println(e.getMessage());
 		}
-		
+		*/
 		return lista;
 	}
 

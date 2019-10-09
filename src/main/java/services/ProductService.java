@@ -6,7 +6,7 @@ import java.util.List;
 import javax.inject.Inject;
 import javax.inject.Named;
 
-import dao.IProductRepository;
+import dao.IDepartamentoRepository;
 import entity.Departamento;
 
 @Named
@@ -15,7 +15,7 @@ public class ProductService implements IProductService,Serializable {
 	private static final long serialVersionUID = 1L;
 	
 	@Inject
-	private IProductRepository cpdao;
+	private IDepartamentoRepository cpdao;
 	
 	@Override
 	public boolean insert(Departamento product) {

@@ -6,7 +6,7 @@ import java.util.List;
 import javax.inject.Inject;
 import javax.inject.Named;
 
-import dao.ICategoryRepository;
+import dao.IProvinciaRepository;
 import entity.Category;
 
 @Named
@@ -15,7 +15,7 @@ public class CategoryService implements ICategoryService,Serializable{
 	private static final long serialVersionUID = 1L;
 
 	@Inject
-	private ICategoryRepository cdao; 
+	private IProvinciaRepository cdao; 
 	
 	@Override
 	public boolean insert(Category category) {
