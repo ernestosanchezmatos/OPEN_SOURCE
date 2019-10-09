@@ -9,6 +9,7 @@ import javax.enterprise.context.SessionScoped;
 import javax.inject.Inject;
 import javax.inject.Named;
 
+
 import entity.Departamento;
 import entity.Provincia;
 import services.IProvinciaService;
@@ -116,53 +117,37 @@ public class ProvinciaController implements Serializable{
 			this.init();
 		}
 
-		public IDepartamentoService getDepartamentoService() {
-			return DepartamentoService;
-		}
-
-		public void setDepartamentoService(IDepartamentoService departamentoService) {
-			DepartamentoService = departamentoService;
-		}
-
-		public IProvinciaService getProvinciaService() {
-			return ProvinciaService;
-		}
-
-		public void setProvinciaService(IProvinciaService provinciaService) {
-			ProvinciaService = provinciaService;
-		}
-
 		public Departamento getDepartamento() {
 			return Departamento;
 		}
 
-		public void setDepartamento(Departamento departamento) {
-			Departamento = departamento;
+		public void setDepartamento(Departamento Departamento) {
+			this.Departamento = Departamento;
 		}
 
-		public List<Departamento> getListaDepartamentos() {
+		public List<Departamento> getListaAsignatura() {
 			return listaDepartamentos;
 		}
 
-		public void setListaDepartamentos(List<Departamento> listaDepartamentos) {
-			this.listaDepartamentos = listaDepartamentos;
+		public void setListaDepartamento(List<Departamento> listaDepartamento) {
+			this.listaDepartamentos = listaDepartamento;
 		}
 
 		public Provincia getProvincia() {
 			return Provincia;
 		}
 
-		public void setProvincia(Provincia provincia) {
-			Provincia = provincia;
+		public void setProvincia(Provincia Provincia) {
+			this.Provincia = Provincia;
 		}
 
-		public List<Provincia> getListaProvincias() {
+		public List<Provincia> getListaProvincia() {
 			return listaProvincias;
 		}
 
-		public void setListaProvincias(List<Provincia> listaProvincias) {
-			this.listaProvincias = listaProvincias;
-		}	
+		public void setListaCurso(List<Provincia> listaProvincia) {
+			this.listaProvincias = listaProvincia;
+		}
 		
 
 }
