@@ -10,7 +10,7 @@ import dao.IDepartamentoRepository;
 import entity.Departamento;
 
 @Named
-public class ProductService implements IProductService,Serializable {
+public class DepartamentoService implements IDepartamentoService,Serializable {
 
 	private static final long serialVersionUID = 1L;
 	
@@ -18,14 +18,14 @@ public class ProductService implements IProductService,Serializable {
 	private IDepartamentoRepository cpdao;
 	
 	@Override
-	public boolean insert(Departamento product) {
+	public boolean insert(Departamento Departamento) {
 		
-		return cpdao.insert(product);	
+		return cpdao.insert(Departamento);	
 		}
 
 	@Override
-	public boolean update(Departamento product) {
-		return cpdao.update(product);
+	public boolean update(Departamento Departamento) {
+		return cpdao.update(Departamento);
 		}
 
 	@Override
@@ -45,9 +45,9 @@ public class ProductService implements IProductService,Serializable {
 	}
 
 	@Override
-	public List<Departamento> findbyname(Departamento product) {
+	public List<Departamento> findbyname(Departamento Departamento) {
 		// TODO Auto-generated method stub
-		return cpdao.findbyname(product);
+		return cpdao.findbyname(Departamento);
 	}
 
 }

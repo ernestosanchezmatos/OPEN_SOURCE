@@ -2,6 +2,8 @@ package services;
 
 import java.util.List;
 
+
+
 public interface ICrudService<T> {
 
 	public boolean insert(T t);

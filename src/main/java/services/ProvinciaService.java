@@ -7,10 +7,10 @@ import javax.inject.Inject;
 import javax.inject.Named;
 
 import dao.IProvinciaRepository;
-import entity.Category;
+import entity.Provincia;
 
 @Named
-public class CategoryService implements ICategoryService,Serializable{
+public class ProvinciaService implements IProvinciaService,Serializable{
 
 	private static final long serialVersionUID = 1L;
 
@@ -18,14 +18,14 @@ public class CategoryService implements ICategoryService,Serializable{
 	private IProvinciaRepository cdao; 
 	
 	@Override
-	public boolean insert(Category category) {
-		return cdao.insert(category);
+	public boolean insert(Provincia Provincia) {
+		return cdao.insert(Provincia);
 	}
 
 	@Override
-	public boolean update(Category category) {
+	public boolean update(Provincia Provincia) {
 		// TODO Auto-generated method stub
-		return cdao.update(category);
+		return cdao.update(Provincia);
 	}
 
 	@Override
@@ -35,21 +35,21 @@ public class CategoryService implements ICategoryService,Serializable{
 	}
 
 	@Override
-	public List<Category> ListAll() {
+	public List<Provincia> ListAll() {
 		// TODO Auto-generated method stub
 		return cdao.ListAll();
 	}
 
 	@Override
-	public Category FinbyId(int id) {
+	public Provincia FinbyId(int id) {
 		// TODO Auto-generated method stub
 		return cdao.FinbyId(id);
 	}
 
 	@Override
-	public List<Category> findbyname(Category category) {
+	public List<Provincia> findbyname(Provincia Provincia) {
 		// TODO Auto-generated method stub
-		return cdao.findbyname(category);
+		return cdao.findbyname(Provincia);
 	}
 
 	

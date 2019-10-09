@@ -29,20 +29,52 @@ public class Reporte implements Serializable{
 	private String FechaEjecucion;	
 	
 	@ManyToOne
-	@JoinColumn(name="DistritoId",nullable = false)
-	private Distrito Distrito;
+	@JoinColumn(name="Orden_DetalleId",nullable = false)
+	private Orden_Detalle Orden_Detalle;
 
-	public Reporte(int ReporteId, String FechaEjecucion,String FechaGeneracion,Distrito Distrito) {
+	public Reporte(int ReporteId, String FechaEjecucion,String FechaGeneracion,Orden_Detalle Orden_Detalle) {
 		super();
 		this.ReporteId = ReporteId;
 		this.FechaEjecucion = FechaEjecucion;		
 		this.FechaGeneracion = FechaGeneracion;		
-		this.Distrito = Distrito;
+		this.Orden_Detalle = Orden_Detalle;
 	}
 
 	public Reporte() {
 		super();
 		// TODO Auto-generated constructor stub
+	}
+
+	public int getReporteId() {
+		return ReporteId;
+	}
+
+	public void setReporteId(int reporteId) {
+		ReporteId = reporteId;
+	}
+
+	public String getFechaGeneracion() {
+		return FechaGeneracion;
+	}
+
+	public void setFechaGeneracion(String fechaGeneracion) {
+		FechaGeneracion = fechaGeneracion;
+	}
+
+	public String getFechaEjecucion() {
+		return FechaEjecucion;
+	}
+
+	public void setFechaEjecucion(String fechaEjecucion) {
+		FechaEjecucion = fechaEjecucion;
+	}
+
+	public Orden_Detalle getOrden_Detalle() {
+		return Orden_Detalle;
+	}
+
+	public void setOrden_Detalle(Orden_Detalle orden_Detalle) {
+		Orden_Detalle = orden_Detalle;
 	}
 
 
