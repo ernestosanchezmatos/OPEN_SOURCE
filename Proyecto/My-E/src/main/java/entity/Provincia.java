@@ -13,7 +13,7 @@ import javax.persistence.Table;
 
 @Entity
 @Table(name="Provincia")
-public class Provincia implements Serializable{
+public class Provincia implements SeriaSlizable{
 
 	private static final long serialVersionUID = 1L;
 
