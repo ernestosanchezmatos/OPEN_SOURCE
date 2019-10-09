@@ -1,0 +1,108 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:p="http://primefaces.org/ui">
+<ui:composition template="master.xhtml">
+	<ui:define name="title">
+        .:Listado de Productos:.
+    </ui:define>
+	<ui:define name="titleCont">
+		<span>Listado de Productos </span>
+	</ui:define>
+
+	<ui:define name="content">
+
+		<h:form>
+			<div class="row">
+				<div class="col-sm-4">
+					<div class="form-group">
+						<h:outputLabel for="nombres" value="Nombres:"
+							styleClass="control-label" />
+
+						<p:inputText autocomplete="off" id="nombres"
+							styleClass="form-control"
+							value="#{productController.product.nameProduct}" maxlength="120" />
+					</div>
+				</div>
+
+				<div class="col-sm-8 text-right">
+					<div class="form-group box-main-btn">
+						<span style="display: block; height: 30px;"></span>
+						<p:commandButton value="Limpiar" update="lstProducts"
+							actionListener="#{productController.limpiarProducto()}"
+							styleClass="btn btn-default" ajax="false" />
+
+						<p:commandButton value="Buscar" update="lstProducts"
+							actionListener="#{productController.buscarProductNombre()}"
+							styleClass="btn btn-default btn-border" ajax="true" />
+
+						<p:commandButton value="Nuevo"
+							action="#{productController.nuevoProducto()}"
+							styleClass="btn btn-primary" ajax="false" />
+
+					</div>
+				</div>
+			</div>
+
+
+			<div class="row">
+				<div class="col-sm-12">
+					<div class="form-group table-responsive box-table-class">
+
+						<p:dataTable id="lstProducts" var="product"
+							value="#{productController.listaProductos}" paginator="true"
+							paginatorPosition="top" rowsPerPageTemplate="10,20,30,40,50"
+							rows="10" styleClass="table table-bordered"
+							emptyMessage="No existen registros" rowIndexVar="item"
+							style="margin-bottom:0">
+
+							<p:column headerText="Id">
+								<h:outputText value="#{product.idProduct}" />
+							</p:column>
+
+							<p:column headerText="Nombre">
+								<h:outputText value="#{product.nameProduct}" />
+							</p:column>
+
+							<p:column headerText="Precio">
+								<h:outputText value="#{product.priceProduct}" />
+							</p:column>
+
+							<p:column headerText="Categoría">
+								<h:outputText value="#{product.category.nameCategory}" />
+							</p:column>
+							<p:column headerText="Operación" exportable="false">
+								<h:commandLink action="listProducts" value="Eliminar" 
+									actionListener="#{productController.eliminar(product)}" />
+							</p:column>
+							<p:column headerText="Operación" exportable="false">
+								<h:commandLink action="product" value="Actualizar"
+									actionListener="#{productController.mostrar(product)}" />
+							</p:column>
+						</p:dataTable>
+						<h:commandLink>
+							<p:outputLabel value="ExportarExcel"></p:outputLabel>
+							<p:dataExporter type="xls" target="lstProducts"
+								fileName="ExcelWeb" pageOnly="false" />
+						</h:commandLink>
+						<h:commandLink>
+							<p:outputLabel value="ExportarPdf"></p:outputLabel>
+							<p:dataExporter type="pdf" target="lstProducts"
+								fileName="PdfWeb" />
+						</h:commandLink>
+					</div>
+
+				</div>
+			</div>
+
+		</h:form>
+	</ui:define>
+
+	<ui:define name="footerCont">
+
+	</ui:define>
+</ui:composition>
+
+</html>
