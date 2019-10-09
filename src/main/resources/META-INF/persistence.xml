@@ -8,6 +8,10 @@
 	<class>entity.Ciudad</class>
 	<class>entity.Distrito</class>
 	<class>entity.Lugar</class>
+	<class>entity.Persona</class>
+	<class>entity.Empleado</class>
+	<class>entity.Cliente</class>
+
 	<properties>
 	<property name="javax.persistence.schema-generation.database.action" value="none"/>
 	</properties>
