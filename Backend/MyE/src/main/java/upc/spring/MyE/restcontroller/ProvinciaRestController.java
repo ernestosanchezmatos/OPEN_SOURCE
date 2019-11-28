@@ -20,34 +20,34 @@ import org.springframework.web.bind.annotation.RestController;
 
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
-import upc.spring.MyE.model.entity.Ejemplar;
-import upc.spring.MyE.service.EjemplarService;
+import upc.spring.MyE.model.entity.Provincia;
+import upc.spring.MyE.service.ProvinciaService;
 
 
 @RestController
-@RequestMapping("/ejemplares")
-@Api(value = "REST para Ejemplars")
-public class EjemplarRestController {
+@RequestMapping("/provincias")
+@Api(value = "REST para Provincias")
+public class ProvinciaRestController {
 
 	@Autowired
-	private EjemplarService EjemplarServ;
+	private ProvinciaService ProvinciaServ;
 	
-	@ApiOperation("Fetch all Ejemplars")
+	@ApiOperation("Fetch all Provincias")
 	@GetMapping(produces = MediaType.APPLICATION_JSON_VALUE)
-	public ResponseEntity<List<Ejemplar>> fetchAll(){
+	public ResponseEntity<List<Provincia>> fetchAll(){
 		try {
-			List<Ejemplar> Ejemplars=EjemplarServ.findAll();
-			return new ResponseEntity<List<Ejemplar>>(Ejemplars,HttpStatus.OK);
+			List<Provincia> Provincias=ProvinciaServ.findAll();
+			return new ResponseEntity<List<Provincia>>(Provincias,HttpStatus.OK);
 		} catch (Exception e) {
-			return new ResponseEntity<List<Ejemplar>>(HttpStatus.INTERNAL_SERVER_ERROR);
+			return new ResponseEntity<List<Provincia>>(HttpStatus.INTERNAL_SERVER_ERROR);
 		}
 	}
 	
-	@ApiOperation("Save Ejemplar")
+	@ApiOperation("Save Provincia")
 	@PostMapping(consumes = MediaType.APPLICATION_JSON_VALUE, produces = MediaType.APPLICATION_JSON_VALUE)
-	public ResponseEntity<Object> save(@Valid @RequestBody Ejemplar Ejemplar){
+	public ResponseEntity<Object> save(@Valid @RequestBody Provincia Provincia){
 		try {
-			Ejemplar tmp=EjemplarServ.save(Ejemplar);
+			Provincia tmp=ProvinciaServ.save(Provincia);
 			if(tmp!=null) {
 				return new ResponseEntity<Object>(HttpStatus.OK);
 			}else {
@@ -58,13 +58,13 @@ public class EjemplarRestController {
 		}
 	}
 	
-	@ApiOperation("Update Ejemplar")
+	@ApiOperation("Update Provincia")
 	@PutMapping(consumes = MediaType.APPLICATION_JSON_VALUE, produces = MediaType.APPLICATION_JSON_VALUE)
-	public ResponseEntity<Object> update(@Valid @RequestBody Ejemplar Ejemplar){
+	public ResponseEntity<Object> update(@Valid @RequestBody Provincia Provincia){
 		try {
-			Optional<Ejemplar> buscado=EjemplarServ.findById(Ejemplar.getEjemplarId());
+			Optional<Provincia> buscado=ProvinciaServ.findById(Provincia.getProvinciaId());
 			if(buscado.isPresent()) {
-				EjemplarServ.update(Ejemplar);
+				ProvinciaServ.update(Provincia);
 				return new ResponseEntity<Object>(HttpStatus.OK);
 			}else {
 				return new ResponseEntity<Object>(HttpStatus.NOT_FOUND);
@@ -74,40 +74,40 @@ public class EjemplarRestController {
 		}
 	}
 	
-    @ApiOperation("Remove all Ejemplars")
+    @ApiOperation("Remove all Provincias")
 	@DeleteMapping(produces = "text/plain")
 	public ResponseEntity<String> deleteAll(){
 		try {
-			EjemplarServ.deleteAll();
-			return new ResponseEntity<String>("Ejemplars eliminados", HttpStatus.OK);
+			ProvinciaServ.deleteAll();
+			return new ResponseEntity<String>("Provincias eliminados", HttpStatus.OK);
 		} catch (Exception e) {
 			return new ResponseEntity<String>(HttpStatus.INTERNAL_SERVER_ERROR);
 		}
 	}
 	
-	@ApiOperation("Fetch Ejemplar by id")
+	@ApiOperation("Fetch Provincia by id")
 	@GetMapping(value = "/{id}", produces = MediaType.APPLICATION_JSON_VALUE)
-	public ResponseEntity<Ejemplar> fetchById(@PathVariable("id") Integer id){
+	public ResponseEntity<Provincia> fetchById(@PathVariable("id") Integer id){
 		try {
-			Optional<Ejemplar> Ejemplar=EjemplarServ.findById(id);
-			if(Ejemplar.isPresent()) {
-				return new ResponseEntity<Ejemplar>(Ejemplar.get(),HttpStatus.OK);
+			Optional<Provincia> Provincia=ProvinciaServ.findById(id);
+			if(Provincia.isPresent()) {
+				return new ResponseEntity<Provincia>(Provincia.get(),HttpStatus.OK);
 			}else {
-				return new ResponseEntity<Ejemplar>(HttpStatus.NOT_FOUND);
+				return new ResponseEntity<Provincia>(HttpStatus.NOT_FOUND);
 			}
 		} catch (Exception e) {
-			return new ResponseEntity<Ejemplar>(HttpStatus.INTERNAL_SERVER_ERROR);
+			return new ResponseEntity<Provincia>(HttpStatus.INTERNAL_SERVER_ERROR);
 		}
 	}
 	
-	@ApiOperation("Remove Ejemplar by id")
+	@ApiOperation("Remove Provincia by id")
 	@DeleteMapping(value = "/{id}", produces = MediaType.APPLICATION_JSON_VALUE)
 	public ResponseEntity<String> deleteById(@PathVariable("id") Integer id){
 		try {
-			Optional<Ejemplar> Ejemplar=EjemplarServ.findById(id);
-			if(Ejemplar.isPresent()) {
-				EjemplarServ.deleteById(id);
-				return new ResponseEntity<String>("Ejemplar eliminado",HttpStatus.OK);
+			Optional<Provincia> Provincia=ProvinciaServ.findById(id);
+			if(Provincia.isPresent()) {
+				ProvinciaServ.deleteById(id);
+				return new ResponseEntity<String>("Provincia eliminado",HttpStatus.OK);
 			}else {
 				return new ResponseEntity<String>(HttpStatus.NOT_FOUND);
 			}

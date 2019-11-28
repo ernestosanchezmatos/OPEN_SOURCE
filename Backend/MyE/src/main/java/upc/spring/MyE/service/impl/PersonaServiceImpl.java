@@ -53,4 +53,10 @@ public class PersonaServiceImpl implements PersonaService{
 		PersonaRepo.deleteAll();
 	}
 
+	@Override
+	public Persona fetchByLogin(String usuario, String contraseña) {
+		// TODO Auto-generated method stub
+		return PersonaRepo.fetchByLogin(usuario, contraseña);
+	}
+
 }

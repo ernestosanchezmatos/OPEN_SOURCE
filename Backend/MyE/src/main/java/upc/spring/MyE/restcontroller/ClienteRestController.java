@@ -20,7 +20,9 @@ import org.springframework.web.bind.annotation.RestController;
 
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
+
 import upc.spring.MyE.model.entity.Cliente;
+import upc.spring.MyE.model.entity.Persona;
 import upc.spring.MyE.service.ClienteService;
 
 
@@ -115,4 +117,8 @@ public class ClienteRestController {
 			return new ResponseEntity<String>(HttpStatus.INTERNAL_SERVER_ERROR);
 		}
 	}
+	
+	
+	
+	
 }

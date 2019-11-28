@@ -28,7 +28,7 @@ import upc.spring.MyE.service.ModeloService;
 
 
 @RestController
-@RequestMapping("/Modelos")
+@RequestMapping("/modelos")
 @Api(value = "REST para Modelos")
 public class ModeloRestController implements Serializable {
  

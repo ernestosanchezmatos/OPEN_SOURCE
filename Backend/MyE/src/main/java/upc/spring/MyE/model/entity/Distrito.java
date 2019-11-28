@@ -13,7 +13,7 @@ import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
 @Entity
-@Table(name="Distrito")
+@Table(name="Distritos")
 public class Distrito implements Serializable {
 	
 	/**
@@ -61,6 +61,11 @@ public class Distrito implements Serializable {
 		DistritoId = distritoId;
 		NDistrito = nDistrito;
 		Provincia = provincia;
+	}
+
+	public Distrito() {
+		super();
+		// TODO Auto-generated constructor stub
 	}
 	
 }

@@ -13,8 +13,13 @@ import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
 @Entity
-@Table(name="Ejemplar")
+@Table(name="Ejemplares")
 public class Ejemplar  implements Serializable{
+	public Ejemplar() {
+		super();
+		// TODO Auto-generated constructor stub
+	}
+
 	/**
 	 * 
 	 */
@@ -27,7 +32,10 @@ public class Ejemplar  implements Serializable{
 	@Column(name="NEjemplar",nullable = false,length = 40)
 	private String NEjemplar;
 	
-	@ManyToOne(fetch = FetchType.EAGER)
+	@Column(name="ImagenRuta",nullable = true,length = 40)
+	private String ImagenRuta;
+	
+	@ManyToOne
 	@JoinColumn(name="ModeloId", nullable = false)	
 	private Modelo Modelo;
 
@@ -55,12 +63,28 @@ public class Ejemplar  implements Serializable{
 		Modelo = modelo;
 	}
 
-	public Ejemplar(Integer ejemplarId, String nEjemplar, upc.spring.MyE.model.entity.Modelo modelo) {
+	public Ejemplar(Integer ejemplarId, String nEjemplar, String imagenRuta,
+			upc.spring.MyE.model.entity.Modelo modelo) {
 		super();
 		EjemplarId = ejemplarId;
 		NEjemplar = nEjemplar;
+		ImagenRuta = imagenRuta;
 		Modelo = modelo;
 	}
+
+	public String getImagenRuta() {
+		return ImagenRuta;
+	}
+
+	public void setImagenRuta(String imagenRuta) {
+		ImagenRuta = imagenRuta;
+	}
+
+	public static long getSerialversionuid() {
+		return serialVersionUID;
+	}
+
+	
 	
 	
 }

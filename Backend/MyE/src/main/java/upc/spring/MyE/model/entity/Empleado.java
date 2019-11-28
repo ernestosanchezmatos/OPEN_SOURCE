@@ -15,33 +15,36 @@ import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
 @Entity
-@Table(name="Clientes")
-public class Cliente implements Serializable{			
+@Table(name="Empleados")
+public class Empleado implements Serializable{			
 /**
 	 * 
 	 */
 	private static final long serialVersionUID = 1L;
 
 //	@GeneratedValue(strategy = GenerationType.IDENTITY)
-//	private Integer ClienteId; 	
+//	private Integer EmpleadoId; 	
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private Integer ClienteId;
+	private Integer EmpleadoId;
 	
 	@OneToOne(cascade=CascadeType.ALL)
 	@JoinColumn(name="PersonaId")		
-	private Persona Persona;	
+	private Persona Persona;
+	
+	@Column(name="DNI",nullable = false)
+	private Integer DNI;
+	
+	@Column(name="Estado",nullable = false)
+	private Boolean Estado;
 
-	@Column(name="Ruc",nullable = true)
-	private Integer Ruc;
-
-	public Integer getClienteId() {
-		return ClienteId;
+	public Integer getEmpleadoId() {
+		return EmpleadoId;
 	}
 
-	public void setClienteId(Integer clienteId) {
-		ClienteId = clienteId;
+	public void setEmpleadoId(Integer empleadoId) {
+		EmpleadoId = empleadoId;
 	}
 
 	public Persona getPersona() {
@@ -52,31 +55,41 @@ public class Cliente implements Serializable{
 		Persona = persona;
 	}
 
-	public Integer getRuc() {
-		return Ruc;
+	public Integer getDNI() {
+		return DNI;
 	}
 
-	public void setRuc(Integer ruc) {
-		Ruc = ruc;
+	public void setDNI(Integer dNI) {
+		DNI = dNI;
+	}
+
+	public Boolean getEstado() {
+		return Estado;
+	}
+
+	public void setEstado(Boolean estado) {
+		Estado = estado;
 	}
 
 	public static long getSerialversionuid() {
 		return serialVersionUID;
 	}
 
-	public Cliente(Integer clienteId, upc.spring.MyE.model.entity.Persona persona, Integer ruc) {
+	public Empleado(Integer empleadoId, upc.spring.MyE.model.entity.Persona persona, Integer dNI, Boolean estado) {
 		super();
-		ClienteId = clienteId;
+		EmpleadoId = empleadoId;
 		Persona = persona;
-		Ruc = ruc;
+		DNI = dNI;
+		Estado = estado;
 	}
 
-	public Cliente() {
+	public Empleado() {
 		super();
 		// TODO Auto-generated constructor stub
 	}
 	
-	
+
+
 	
 	
 }

@@ -4,6 +4,7 @@ import java.io.Serializable;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
@@ -29,26 +30,29 @@ public class Persona  implements Serializable{
 	@Column(name="NPersona",nullable = false,length = 40)
 	private String NPersona;
 	
+	@Column(name="ImagenRuta",nullable = true,length = 40)
+	private String ImagenRuta;
+	//PARA LOGIN
+	@Column(name="Psw",nullable = false,length = 40)
+	private String Psw;
+	
+	@Column(name="NombreUsuario",nullable = false,length = 40)
+	private String NombreUsuario;
+	
+	//
 	@Column(name="NumContacto",nullable = false,length = 40)
 	private Integer NumContacto;
 	
-	public Persona(Integer PersonaId, String NPersona, Integer NumContacto) {
-		super();
-		this.PersonaId = PersonaId;
-		this.NPersona = NPersona;
-		this.NumContacto = NumContacto;
-	}
-	
-	public Persona()
-	{
-		super();
-	}
+	@ManyToOne(fetch = FetchType.EAGER)
+	@JoinColumn(name="LugarId", nullable = false)	
+	private Lugar Lugar;
+
 	public Integer getPersonaId() {
 		return PersonaId;
 	}
 
-	public void setPersonaId(Integer PersonaId) {
-		this.PersonaId = PersonaId;
+	public void setPersonaId(Integer personaId) {
+		PersonaId = personaId;
 	}
 
 	public String getNPersona() {
@@ -56,14 +60,73 @@ public class Persona  implements Serializable{
 	}
 
 	public void setNPersona(String nPersona) {
-		this.NPersona = nPersona;
+		NPersona = nPersona;
 	}
+
+	public String getImagenRuta() {
+		return ImagenRuta;
+	}
+
+	public void setImagenRuta(String imagenRuta) {
+		ImagenRuta = imagenRuta;
+	}
+
+	public String getPsw() {
+		return Psw;
+	}
+
+	public void setPsw(String psw) {
+		Psw = psw;
+	}
+
+	public String getNombreUsuario() {
+		return NombreUsuario;
+	}
+
+	public void setNombreUsuario(String nombreUsuario) {
+		NombreUsuario = nombreUsuario;
+	}
+
 	public Integer getNumContacto() {
 		return NumContacto;
 	}
 
-	public void setNumContacto(Integer NumContacto) {
-		this.NumContacto = NumContacto;
-	}	
+	public void setNumContacto(Integer numContacto) {
+		NumContacto = numContacto;
+	}
 
+	public Lugar getLugar() {
+		return Lugar;
+	}
+
+	public void setLugar(Lugar lugar) {
+		Lugar = lugar;
+	}
+
+	public static long getSerialversionuid() {
+		return serialVersionUID;
+	}
+
+	public Persona(Integer personaId, String nPersona, String imagenRuta, String psw, String nombreUsuario,
+			Integer numContacto, upc.spring.MyE.model.entity.Lugar lugar) {
+		super();
+		PersonaId = personaId;
+		NPersona = nPersona;
+		ImagenRuta = imagenRuta;
+		Psw = psw;
+		NombreUsuario = nombreUsuario;
+		NumContacto = numContacto;
+		Lugar = lugar;
+	}
+
+	public Persona() {
+		super();
+		// TODO Auto-generated constructor stub
+	}
+
+
+
+
+	
+	
 }

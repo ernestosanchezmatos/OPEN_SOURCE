@@ -20,7 +20,7 @@ import javax.validation.constraints.NotNull;
 
 
 @Entity
-@Table(name="Equipo")
+@Table(name="Equipos")
 public class Equipo implements Serializable {
 	
 	/**

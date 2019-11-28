@@ -1,0 +1,18 @@
+use dbastra;
+
+INSERT INTO departamentos VALUES (null,'Lima');
+INSERT INTO provincias VALUES (null,'Lima_prov',1);
+INSERT INTO distritos VALUES (null,'Lima_dist',1);
+INSERT INTO lugares VALUES (null,'AV. SALAVERRY',1);
+
+INSERT INTO PERSONAS VALUES (null,null,'Ernesto','ernestouser',908,'123456',1);
+INSERT INTO PERSONAS VALUES (null,null,'VendedorNN','vendedoruser',908,'123456',1);
+
+INSERT INTO clientes VALUES (null,'454536', 1);
+INSERT INTO empleados VALUES (null,'454536',1,2);
+
+insert into equipos values (null,'RAYOS X');
+insert into modelos values (null,'R13423',1);
+insert into ejemplares values (null,'SRCgaaa','EQUIPITO X',1);
+
+insert into ordenes values (null,'2019-01-01','2019-01-01','gaaa',3,1,1,1);

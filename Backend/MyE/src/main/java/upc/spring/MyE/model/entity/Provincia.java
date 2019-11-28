@@ -16,6 +16,11 @@ import javax.validation.constraints.NotNull;
 @Entity
 @Table(name="Provincias")
 public class Provincia implements Serializable{
+	public Provincia() {
+		super();
+		// TODO Auto-generated constructor stub
+	}
+
 	/**
 	 * 
 	 */

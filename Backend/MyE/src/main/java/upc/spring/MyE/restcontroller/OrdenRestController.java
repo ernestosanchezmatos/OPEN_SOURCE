@@ -20,34 +20,34 @@ import org.springframework.web.bind.annotation.RestController;
 
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
-import upc.spring.MyE.model.entity.Ejemplar;
-import upc.spring.MyE.service.EjemplarService;
+import upc.spring.MyE.model.entity.Orden;
+import upc.spring.MyE.service.OrdenService;
 
 
 @RestController
-@RequestMapping("/ejemplares")
-@Api(value = "REST para Ejemplars")
-public class EjemplarRestController {
+@RequestMapping("/ordenes")
+@Api(value = "REST para Ordens")
+public class OrdenRestController {
 
 	@Autowired
-	private EjemplarService EjemplarServ;
+	private OrdenService OrdenServ;
 	
-	@ApiOperation("Fetch all Ejemplars")
+	@ApiOperation("Fetch all Ordens")
 	@GetMapping(produces = MediaType.APPLICATION_JSON_VALUE)
-	public ResponseEntity<List<Ejemplar>> fetchAll(){
+	public ResponseEntity<List<Orden>> fetchAll(){
 		try {
-			List<Ejemplar> Ejemplars=EjemplarServ.findAll();
-			return new ResponseEntity<List<Ejemplar>>(Ejemplars,HttpStatus.OK);
+			List<Orden> Ordens=OrdenServ.findAll();
+			return new ResponseEntity<List<Orden>>(Ordens,HttpStatus.OK);
 		} catch (Exception e) {
-			return new ResponseEntity<List<Ejemplar>>(HttpStatus.INTERNAL_SERVER_ERROR);
+			return new ResponseEntity<List<Orden>>(HttpStatus.INTERNAL_SERVER_ERROR);
 		}
 	}
 	
-	@ApiOperation("Save Ejemplar")
+	@ApiOperation("Save Orden")
 	@PostMapping(consumes = MediaType.APPLICATION_JSON_VALUE, produces = MediaType.APPLICATION_JSON_VALUE)
-	public ResponseEntity<Object> save(@Valid @RequestBody Ejemplar Ejemplar){
+	public ResponseEntity<Object> save(@Valid @RequestBody Orden Orden){
 		try {
-			Ejemplar tmp=EjemplarServ.save(Ejemplar);
+			Orden tmp=OrdenServ.save(Orden);
 			if(tmp!=null) {
 				return new ResponseEntity<Object>(HttpStatus.OK);
 			}else {
@@ -58,13 +58,13 @@ public class EjemplarRestController {
 		}
 	}
 	
-	@ApiOperation("Update Ejemplar")
+	@ApiOperation("Update Orden")
 	@PutMapping(consumes = MediaType.APPLICATION_JSON_VALUE, produces = MediaType.APPLICATION_JSON_VALUE)
-	public ResponseEntity<Object> update(@Valid @RequestBody Ejemplar Ejemplar){
+	public ResponseEntity<Object> update(@Valid @RequestBody Orden Orden){
 		try {
-			Optional<Ejemplar> buscado=EjemplarServ.findById(Ejemplar.getEjemplarId());
+			Optional<Orden> buscado=OrdenServ.findById(Orden.getOrdenId());
 			if(buscado.isPresent()) {
-				EjemplarServ.update(Ejemplar);
+				OrdenServ.update(Orden);
 				return new ResponseEntity<Object>(HttpStatus.OK);
 			}else {
 				return new ResponseEntity<Object>(HttpStatus.NOT_FOUND);
@@ -74,40 +74,40 @@ public class EjemplarRestController {
 		}
 	}
 	
-    @ApiOperation("Remove all Ejemplars")
+    @ApiOperation("Remove all Ordens")
 	@DeleteMapping(produces = "text/plain")
 	public ResponseEntity<String> deleteAll(){
 		try {
-			EjemplarServ.deleteAll();
-			return new ResponseEntity<String>("Ejemplars eliminados", HttpStatus.OK);
+			OrdenServ.deleteAll();
+			return new ResponseEntity<String>("Ordens eliminados", HttpStatus.OK);
 		} catch (Exception e) {
 			return new ResponseEntity<String>(HttpStatus.INTERNAL_SERVER_ERROR);
 		}
 	}
 	
-	@ApiOperation("Fetch Ejemplar by id")
+	@ApiOperation("Fetch Orden by id")
 	@GetMapping(value = "/{id}", produces = MediaType.APPLICATION_JSON_VALUE)
-	public ResponseEntity<Ejemplar> fetchById(@PathVariable("id") Integer id){
+	public ResponseEntity<Orden> fetchById(@PathVariable("id") Integer id){
 		try {
-			Optional<Ejemplar> Ejemplar=EjemplarServ.findById(id);
-			if(Ejemplar.isPresent()) {
-				return new ResponseEntity<Ejemplar>(Ejemplar.get(),HttpStatus.OK);
+			Optional<Orden> Orden=OrdenServ.findById(id);
+			if(Orden.isPresent()) {
+				return new ResponseEntity<Orden>(Orden.get(),HttpStatus.OK);
 			}else {
-				return new ResponseEntity<Ejemplar>(HttpStatus.NOT_FOUND);
+				return new ResponseEntity<Orden>(HttpStatus.NOT_FOUND);
 			}
 		} catch (Exception e) {
-			return new ResponseEntity<Ejemplar>(HttpStatus.INTERNAL_SERVER_ERROR);
+			return new ResponseEntity<Orden>(HttpStatus.INTERNAL_SERVER_ERROR);
 		}
 	}
 	
-	@ApiOperation("Remove Ejemplar by id")
+	@ApiOperation("Remove Orden by id")
 	@DeleteMapping(value = "/{id}", produces = MediaType.APPLICATION_JSON_VALUE)
 	public ResponseEntity<String> deleteById(@PathVariable("id") Integer id){
 		try {
-			Optional<Ejemplar> Ejemplar=EjemplarServ.findById(id);
-			if(Ejemplar.isPresent()) {
-				EjemplarServ.deleteById(id);
-				return new ResponseEntity<String>("Ejemplar eliminado",HttpStatus.OK);
+			Optional<Orden> Orden=OrdenServ.findById(id);
+			if(Orden.isPresent()) {
+				OrdenServ.deleteById(id);
+				return new ResponseEntity<String>("Orden eliminado",HttpStatus.OK);
 			}else {
 				return new ResponseEntity<String>(HttpStatus.NOT_FOUND);
 			}

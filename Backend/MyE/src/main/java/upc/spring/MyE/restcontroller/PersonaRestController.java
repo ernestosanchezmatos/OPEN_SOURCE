@@ -4,6 +4,7 @@ import java.util.List;
 import java.util.Optional;
 
 import javax.validation.Valid;
+import javax.validation.constraints.Null;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -17,6 +18,8 @@ import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
+
+import com.sun.istack.Nullable;
 
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
@@ -115,4 +118,20 @@ public class PersonaRestController {
 			return new ResponseEntity<String>(HttpStatus.INTERNAL_SERVER_ERROR);
 		}
 	}
+	
+	@ApiOperation("login")
+	@GetMapping(value="/{usuario}/{contraseña}", produces=MediaType.APPLICATION_JSON_VALUE)
+	public ResponseEntity<Persona> fetchByLogin(@PathVariable("usuario") String usuario, @PathVariable("contraseña") String contraseña){
+		try {
+			Persona persona = PersonaServ.fetchByLogin(usuario, contraseña);
+			if(persona !=null)
+				return new ResponseEntity<Persona>(persona, HttpStatus.OK);
+			else
+				return new ResponseEntity<Persona>(HttpStatus.NOT_FOUND);
+		} catch (Exception e) {
+			return new ResponseEntity<Persona>(HttpStatus.INTERNAL_SERVER_ERROR);
+		}
+	}
+	
+	
 }
