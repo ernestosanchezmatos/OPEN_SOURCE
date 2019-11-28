@@ -16,8 +16,7 @@ import javax.persistence.Table;
 
 @Entity
 @Table(name="clientes")
-public class Cliente implements Serializable{		
-	
+public class Cliente implements Serializable{			
 /**
 	 * 
 	 */
