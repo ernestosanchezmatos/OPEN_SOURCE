@@ -19,7 +19,7 @@ function indexMain(){
             <th scope="row">1</th>
             <td>${rpta[i].fechaGeneracion}</td>
             <td>${rpta[i].fechaEjecucion}</td>
-            <td>${rpta[i].ejemplar.nejemplar}</td>
+            <td >${rpta[i].ejemplar.nejemplar}</td>
             <td>${rpta[i].empleado.persona.npersona}</td>
             <td>AreaManagerTEST 'GAAAA'</td>
             <td>AreaTEST 'GAAAA'</td>
