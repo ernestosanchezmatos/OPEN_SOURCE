@@ -77,7 +77,49 @@
               
             </div>
         </div>
-
+<!--Popup de Entidades-->
+<div class="modal fade" id="popupIngenieros" tabindex="-1" role="dialog">
+    <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="pricing-title">Seleccionar Entidad</h5>
+            </div>
+            <div class="modal-body">
+				<div class="container-fluid">
+					<div class="row clearfix">
+						<!--<div class="col-lg-6 col-md-12">-->
+							
+						<!--</div>-->
+						<div class="body">
+                            <div class="table-responsive">
+                                <table class="table">
+                                    <thead>
+                                        <tr class="bg-purple">  
+                                            <th>Sel.</th>
+                                            <th>Nombre de Entidad</th>
+                                            <th>Dirección</th>
+                                            <th>Numero de Contacto</th>
+                                            <th></th>
+                                        </tr>
+                                    </thead>
+                                    <tbody id="tablaListaIng">
+                                       
+                                       
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+						
+					</div>
+				</div>
+			</div>
+            <div class="modal-footer">
+               
+                <button type="button" class="btn btn-danger waves-effect" data-dismiss="modal">Cerrar</button>
+            </div>
+        </div>
+    </div>
+</div>
         <div class="container-fluid">
             <!-- Basic Validation -->
             <div class="row clearfix">
@@ -98,7 +140,9 @@
                                      </select>
                                      <div>
                                         <tr>                                                                                                                                
-                                            <td><button class="btn bg-purple btn-primary waves-effect" data-type="success">View More Details</button></td>     <!-- Boton que registra el servicio --> 
+                                            <td>
+                                                    <button type="button" class="btn btn-default waves-effect m-r-20" data-toggle="modal" data-target="#popupIngenieros" >Respuesta Masiva</button>
+                                            </td>     <!-- Boton que registra el servicio --> 
                                            </tr>
                                      </div>
                                    </div>
