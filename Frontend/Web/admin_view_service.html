@@ -20,7 +20,7 @@
 
 <body class="theme-purple">
 
-<!-- Page Loader -->
+<!-- Pantalla de Carga -->
 <div class="page-loader-wrapper">
         <div class="loader">
             <div class="m-t-30"><img class="zmdi-hc-spin" src="logo_astra.ico" width="48" height="48" alt="My-E"></div>
@@ -32,7 +32,7 @@
 <div class="overlay"></div>
 
 
-
+ <!-- PAGINA DESDE LA PERSPECTIVA DEL ADMINISTRADOR -->
 
 <!-- Left Sidebar -->
 <aside id="leftsidebar" class="sidebar">
@@ -44,18 +44,18 @@
         <ul class="list">
             <li>
                 <div class="user-info">
-                    <a class="image" href="profile.html"  id="imgUsuario"></a>
+                    <a class="image" href="profile.html"><img src="assets/images/profile_av.jpg" alt="User"></a>
                     <div class="detail">
                         <h4>Ernesto</h4> <!--Aqui va el nombre del Usuario Logeado-->
                         <small>Administrator</small>  <!--Aqui va el cargo que ejerce dicho Usuario-->
                     </div>
                 </div>
             </li>
-            <li class="active open"><a href="index.html"><i class="zmdi zmdi-home"></i><span>Home</span></a></li>
-            <li><a href="profile.html"><i class="zmdi zmdi-account"></i><span>My Profile</span></a></li>
-            <li><a href="Manage-Engineer-Accounts.html"><i class="zmdi zmdi-face"></i><span>Manage Engineer Accounts</span></a></li>
-            <li><a href="see_engineer.html"><i class="zmdi zmdi-map"></i><span>See Engineers's Location</span></a></li>
-            <li><a href="sign-in.html"><i class="zmdi zmdi-play-for-work"></i><span>Log Out</span></a></li>
+            <li class="active open"><a href="index.html"><i class="zmdi zmdi-home"></i><span>Home</span></a></li> <!-- Pantalla de Inicio -->
+            <li><a href="profile.html"><i class="zmdi zmdi-account"></i><span>My Profile</span></a></li>  <!-- Pantalla de Mi Perfil -->
+            <li><a href="Manage-Engineer-Accounts.html"><i class="zmdi zmdi-face"></i><span>Manage Engineer Accounts</span></a></li> <!-- Pantalla del Manejor de Cuentas de Ingenieros -->
+            <li><a href="see_engineer.html"><i class="zmdi zmdi-map"></i><span>See Engineers's Location</span></a></li> <!-- Ver la Ubicacion del Ingeniero -->
+            <li><a href="sign-in.html"><i class="zmdi zmdi-play-for-work"></i><span>Log Out</span></a></li> <!-- Salir -->
         </ul>
     </div>
 </aside>
@@ -79,26 +79,79 @@
                             <h2><strong>Services</strong> List</h2>
                             <ul class="header-dropdown">
                             </ul>
+                            <!-- Boton para agregar un nuevo servicio -->
+                            <div class="col-lg-4 col-md-6 col-sm-12">  
+                                <a href="form-validation.html">     
+                                    <button type="button" class="btn bg-purple btn-block waves-effect" data-toggle="modal" data-target="#addevent">New Service</button>
+                                </a>
+                             </div>
+                             <div class="body">
+                                <div class="row clearfix">
+                                    <div class="col-lg-3 col-md-6">
+                                        <p> <b>Engineer Name</b> </p>
+                                        <select class="form-control show-tick ms select2" data-placeholder="Select">
+                                            <option></option>
+                                            <option>Engineer Example 1</option>
+                                            <option>Engineer Example 2</option>         <!-- Lista de Ingenieros para realizar el filtro -->
+                                            <option>Engineer Example 3</option>
+                                        </select>
+                                    </div>
+                                    <div class="col-lg-3 col-md-6">
+                                        <p> <b>Hospital</b> </p>
+                                        <select class="form-control show-tick ms select2" data-placeholder="Select">
+                                            <option></option>
+                                            <option>Hospital Example 1</option>
+                                            <option>Hospital Example 2</option>         <!--  Lista de Hospitales los cuales serviran para hacer el filtro -->
+                                            <option>Hospital Example 3</option>
+                                        </select>
+                                    </div>
+                                    <div class="col-lg-3 col-md-6">
+                                        <p> <b>Service Date Start</b> </p>
+                                        <input type="date" class="form-control" placeholder="Service Date Start" name="Service Date Start" required>    
+                                    </div>
+                                    <div class="col-lg-3 col-md-6">
+                                        <p> <b>Service Date End</b> </p>
+                                        <input type="date" class="form-control" placeholder="Service Date End" name="Service Date End" required>  
+                                    </div>
+                                </div>
+                            </div>
                         </div>
+                       
                         <div class="body">
                             <div class="table-responsive">
                                 <table class="table">
                                     <thead>
                                         <tr class="bg-purple">
                                             <th>#Service Code</th>
-                                            <th>Departure Date</th> <!--Fecha de Salida del Ingeniero-->
-                                            <th>Service Date</th> <!--Fecha a realizar el servicio-->
-                                            <th>Medical Equipment</th>
                                             <th>Engineer Name</th>
-                                            <th>Area Manager</th>
+                                            <th>Medical Equipment</th>
                                             <th>Area</th>
                                             <th>Hospital</th>
-                                            <th>Estimated Work Time</th>
+                                            <th>Area Manager</th>                                       <!-- Atributos del Servicio -->
+                                            <th>Service Date Start</th> <!--Fecha a realizar el servicio-->
+                                            <th>Service Date End</th> <!--Fecha a realizar el servicio-->
+                                            <th>Service Hour</th> <!--Fecha a realizar el servicio-->
                                             <th>Action</th>
                                         </tr>
                                     </thead>
-                                    <tbody id="contTablaServicios">
-                                        
+                                    <tbody>
+                                        <tr>
+                                            <th scope="row">1</th><!-- Aqui va el Service Code-->
+                                            <td>EngineerNameTEST</td>
+                                            <td>MedicalEquipmentTEST</td>
+                                            <td>AreaTEST</td>
+                                            <td>HospitalTEST</td>
+                                            <td>AreaManagerTEST</td>
+                                            <td>ServiceDateStartTEST</td>                                 <!-- Lista de Atributos de un Servicio Ejemplo -->
+                                            <td>ServiceDateEndTEST</td> 
+                                            <td>ServiceHourTEST</td> 
+                                            <td>
+                                                <!-- Boton para poder editar un servicio, pero te lleva a la pagina de añadir un nuevo servicio como referencia a volver a llenar los campos ya registrados-->
+                                                <a href="form-validation.html" button class="btn btn-primary btn-sm"><i class="zmdi zmdi-edit"></i></button></a>    
+                                                <!-- Boton para eliminar un registro -->
+                                                <a button class="btn btn-danger btn-sm"> <i class="zmdi zmdi-delete" ></i></button></a>
+                                            </td>
+                                        </tr>
                                     </tbody>
                                 </table>
                             </div>
@@ -118,10 +171,9 @@
 <script src="assets/bundles/sparkline.bundle.js"></script> <!-- Sparkline Plugin Js -->
 <script src="assets/bundles/c3.bundle.js"></script>
 <script src="assets/bundles/fullcalendarscripts.bundle.js"></script><!--/ calender javascripts --> 
-<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+
 <script src="assets/bundles/mainscripts.bundle.js"></script>
 <script src="assets/js/pages/index.js"></script>
-<script src="../scripts/index.js"></script>
 <script src="assets/js/pages/calendar/calendar.js"></script>
 </body>
 </html>

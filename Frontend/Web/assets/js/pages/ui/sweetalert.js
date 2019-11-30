@@ -37,7 +37,7 @@ $(function () {
 //These codes takes from http://t4t5.github.io/sweetalert/
 
 function showBasicMessage() {
-    swal("Hello world!");
+    swal("Succesful, Registered");
 }
 function showWithTitleMessage() {
     swal("Here's a message!", "It's pretty, isn't it?");

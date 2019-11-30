@@ -14,6 +14,9 @@
 <link rel="stylesheet" href="assets/css/style.min.css">    
 </head>
 
+
+ <!-- INICIAR SESION -->
+
 <body class="theme-purple">
 
 <div class="authentication">
@@ -28,14 +31,16 @@
                     </div>
                     <div class="body">
                         <div class="input-group mb-3">
-                            <input type="text"  class="form-control" id="username" placeholder="User Name">
-                            <div class="input-group-append">
+                            <input type="text" class="form-control" placeholder="User Name">
+                            <div class="input-group-append">                                                          <!--Campo del Nombre de Usuario-->
                                 <span class="input-group-text"><i class="zmdi zmdi-account-circle"></i></span>
                             </div>
                         </div>
                         <div class="input-group mb-3">
-                            <input type="password" id="psw" class="form-control" placeholder="Password">
-                            <div class="input-group-append">                                
+                            <input type="password" class="form-control" placeholder="Password">
+                            <div class="input-group-append">                                                             <!--Campo del Nombre de Usuario-->
+
+                                 <!--Link que te lleva al Olvidar Contraseña-->
                                 <span class="input-group-text"><a href="forgot-password.html" class="forgot" title="Forgot Password"><i class="zmdi zmdi-lock"></i></a></span>
                             </div>                            
                         </div>
@@ -43,16 +48,16 @@
                             <input id="remember_me" type="checkbox">
                             <label for="remember_me">Remember</label>
                         </div>
-                        <a onclick="loginMain()" class="btn btn-primary btn-block waves-effect waves-light">Log In</a>                        
+                        <a href="index.html" class="btn btn-primary btn-block waves-effect waves-light">Log In</a>     <!--Te lleva defrente al Index.html, es decir la pagina de inicio-->                     
                         <div class="signin_with mt-3">
                             <p class="mb-0">or Sign In with...</p>
                             <button class="btn btn-primary btn-icon btn-icon-mini btn-round facebook"><i class="zmdi zmdi-facebook"></i></button>
-                            <button class="btn btn-primary btn-icon btn-icon-mini btn-round twitter"><i class="zmdi zmdi-twitter"></i></button>
+                            <button class="btn btn-primary btn-icon btn-icon-mini btn-round twitter"><i class="zmdi zmdi-twitter"></i></button>          <!--No hacen nada, estan de decoracion xd--> 
                             <button class="btn btn-primary btn-icon btn-icon-mini btn-round google"><i class="zmdi zmdi-google-plus"></i></button>
                         </div>
                     </div>
                     <div class="signup_with mt-3">
-                        <a href="sign-up.html" class="link">I don't have an account</a>
+                        <a href="sign-up.html" class="link">I don't have an account</a>  <!--Link que te lleva al Registrarse--> 
                     </div>
                 </form>
                 <div class="copyright text-center">
@@ -73,7 +78,5 @@
 <!-- Jquery Core Js -->
 <script src="assets/bundles/libscripts.bundle.js"></script>
 <script src="assets/bundles/vendorscripts.bundle.js"></script> <!-- Lib Scripts Plugin Js -->
-<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
-<script src="../scripts/sign-in.js"></script>
 </body>
 </html>

@@ -11,6 +11,12 @@
 <link rel="stylesheet" href="assets/plugins/bootstrap/css/bootstrap.min.css">
 <link rel="stylesheet" href="assets/plugins/sweetalert/sweetalert.css"/>
 
+<!-- Bootstrap Material Datetime Picker Css -->
+<link href="assets/plugins/bootstrap-material-datetimepicker/css/bootstrap-material-datetimepicker.css" rel="stylesheet" />
+<!-- Bootstrap Select Css -->
+<link href="assets/plugins/bootstrap-select/css/bootstrap-select.css" rel="stylesheet" />
+
+
 <!-- Custom Css -->
 <link rel="stylesheet" href="assets/css/style.min.css">
 </head>
@@ -29,7 +35,7 @@
 <div class="overlay"></div>
 
 
-
+ <!-- PAGINA DESDE LA PERSPECTIVA DEL ADMINSTRADOR -->
 
 <!-- Left Sidebar -->
 <aside id="leftsidebar" class="sidebar">
@@ -83,40 +89,76 @@
                         </div>
                         <div class="body">
                             <form id="form_validation" method="POST">
+                                <div>
+                                    <div class="form-group form-float">
+                                     <select class="form-control show-tick">
+                                         <option value="">Choose a Engineer...</option>
+                                         <option value="1">Engineer Example</option>                <!-- Lista en donde se seleccionara el nombre del ingeniero --> 
+                                         <option value="2">Engineer Example 2</option>
+                                     </select>
+                                     <div>
+                                        <tr>                                                                                                                                
+                                            <td><button class="btn bg-purple btn-primary waves-effect" data-type="success">View More Details</button></td>     <!-- Boton que registra el servicio --> 
+                                           </tr>
+                                     </div>
+                                   </div>
+                                 </div>
+                                 <div>
+                                    <div class="form-group form-float">
+                                     <select class="form-control show-tick">
+                                         <option value="">Choose a Medical Equipment...</option>
+                                         <option value="1">Medical Equipment Example</option>       <!-- Lista en donde se seleccionara el equipamento medico --> 
+                                         <option value="2">Medical Equipment Example 2</option>
+                               
+                                     </select>
+                                   </div>
+                                 </div>
+                             
                                 <div class="form-group form-float">
-                                    <input type="text" class="form-control" placeholder="Engineer Name" name="Enginner Name" required>
+                                    <input type="text" class="form-control" placeholder="Area" name="Area" required>            <!-- Area del hospital donde se hara el servicio --> 
+                                </div>
+                                <div>
+                                    <div class="form-group form-float">
+                                     <select class="form-control show-tick">
+                                         <option value="">Choose a Hospital...</option>
+                                         <option value="1">Hospital Example 1</option>       <!-- Lista en donde se seleccionara el equipamento medico --> 
+                                         <option value="2">Hospital Example 2</option>
+                                     </select>
+                                     <div>
+                                        <tr>                                                                                                                                
+                                            <td><button class="btn bg-purple btn-primary waves-effect" data-type="success">View More Details</button></td>     <!-- Boton que registra el servicio --> 
+                                           </tr>
+                                     </div>
+                                   </div>
+                                 </div>
+                                                                                                                                         <!-- Direccion del Hospital -->                   
+                                <div class="form-group form-float">
+                                        <input type="text" class="form-control" placeholder="Area Manager" name="Area Manager" required>    
                                 </div>
                                 <div class="form-group form-float">
-                                    <input type="text" class="form-control" placeholder="Area Manager" name="Area Manager" required>
+                                    <input type="date" class="form-control" placeholder="Service Date Start" name="Service Date Start" required>    
                                 </div>
                                 <div class="form-group form-float">
-                                    <input type="text" class="form-control" placeholder="Hospital" name="Hospital" required>
+                                    <input type="date" class="form-control" placeholder="Service Date End" name="Service Date End" required>    
                                 </div>
+                        
                                 <div class="form-group form-float">
-                                        <input type="text" class="form-control" placeholder="Area" name="Area" required>
-                                    </div>
-                                <div class="form-group form-float">
-                                        <input type="text" class="form-control" placeholder="Medical Equipment" name="Medical Equiment" required>
+                                    <input type="time" class="form-control" placeholder="Service Hour" name="Service Hour" required>    
                                 </div>
-                                <div class="form-group form-float">
-                                        <input type="date" class="form-control" placeholder="Service Date" name="Service Date" required>
-                                </div>
-                                <div class="form-group form-float">
-                                        <input type="time" class="form-control" placeholder="Hour" name="Hour" required>
-                                </div>
-                                <div class="form-group form-float">
+                             
+                                <div class="form-group form-float">                                                                              <!-- Descripcion del servicio en el cual tambien puede ir algun tipo de comentario para el ingeniero al realizar el servicio --> 
                                     <textarea name="description" cols="30" rows="5" placeholder="Description" class="form-control no-resize" required></textarea>
                                 </div>
 
                                 <div class="container-fluid">
-                                        <div class="row clearfix js-sweetalert">
-                                                        <table class="table table-hover mb-0 c_table">
-                                                                <tr>
-                                                                    <td><button class="btn bg-purple btn-primary waves-effect" data-type="success">Submit</button></td>
-                                                                </tr>
-                                                        </table>
-                                        </div>
-                                    </div> 
+                                    <div class="row clearfix js-sweetalert">
+                                         <table class="table table-hover mb-0 c_table">
+                                                <tr>                                                                                                                                
+                                                 <td><button class="btn bg-purple btn-primary waves-effect" data-type="success">Submit</button></td>     <!-- Boton que registra el servicio --> 
+                                                </tr>
+                                        </table>
+                                    </div>
+                                </div> 
                             </form>
                         </div>
                     </div>
@@ -133,10 +175,15 @@
 <script src="assets/plugins/jquery-validation/jquery.validate.js"></script> <!-- Jquery Validation Plugin Css --> 
 <script src="assets/plugins/jquery-steps/jquery.steps.js"></script> <!-- JQuery Steps Plugin Js --> 
 <script src="assets/plugins/sweetalert/sweetalert.min.js"></script> <!-- SweetAlert Plugin Js --> 
+<script src="assets/plugins/momentjs/moment.js"></script> <!-- Moment Plugin Js --> 
+
+<!-- Bootstrap Material Datetime Picker Plugin Js -->
+<script src="assets/plugins/bootstrap-material-datetimepicker/js/bootstrap-material-datetimepicker.js"></script>
 
 
 <script src="assets/bundles/mainscripts.bundle.js"></script><!-- Custom Js --> 
 <script src="assets/js/pages/forms/form-validation.js"></script> 
 <script src="assets/js/pages/ui/sweetalert.js"></script>
+<script src="assets/js/pages/forms/basic-form-elements.js"></script>
 </body>
 </html>
