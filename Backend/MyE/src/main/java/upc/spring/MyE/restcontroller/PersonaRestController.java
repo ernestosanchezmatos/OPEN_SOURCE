@@ -126,8 +126,11 @@ public class PersonaRestController {
 			Persona persona = PersonaServ.fetchByLogin(usuario, contraseña);
 			if(persona !=null)
 				return new ResponseEntity<Persona>(persona, HttpStatus.OK);
-			else
-				return new ResponseEntity<Persona>(HttpStatus.NOT_FOUND);
+			else {		
+				persona=new Persona();
+				persona.setPersonaId(-1);
+				return new ResponseEntity<Persona>(persona, HttpStatus.OK);
+				}
 		} catch (Exception e) {
 			return new ResponseEntity<Persona>(HttpStatus.INTERNAL_SERVER_ERROR);
 		}

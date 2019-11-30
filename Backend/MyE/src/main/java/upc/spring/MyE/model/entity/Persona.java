@@ -30,7 +30,7 @@ public class Persona  implements Serializable{
 	@Column(name="NPersona",nullable = false,length = 40)
 	private String NPersona;
 	
-	@Column(name="ImagenRuta",nullable = true,length = 40)
+	@Column(name="ImagenRuta",nullable = true)
 	private String ImagenRuta;
 	//PARA LOGIN
 	@Column(name="Psw",nullable = false,length = 40)

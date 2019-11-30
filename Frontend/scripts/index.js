@@ -1,11 +1,19 @@
 document.addEventListener("DOMContentLoaded", indexMain, false);
 
 function indexMain(){
+    var _objUsuario=localStorage.getItem("usuario");
+    var objUsuario=JSON.parse(_objUsuario);
+    console.log(objUsuario);
+    var contTablaServicios=document.getElementById('contTablaServicios');
+
     axios.get('http://localhost:8081/ordenes')
     .then(data=>{
         var rpta=data.data;
         console.log(data.data);
-        var contTablaServicios=document.getElementById('contTablaServicios');
+
+        var imgUsuario=document.getElementById('imgUsuario');  
+        imgUsuario.innerHTML=`<img src="${objUsuario.imagenRuta}">`;
+        
         for (var i=0;i<rpta.length;i++){            
             contTablaServicios.innerHTML+=`<tr>
             <th scope="row">1</th>

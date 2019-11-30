@@ -32,7 +32,7 @@ public class Ejemplar  implements Serializable{
 	@Column(name="NEjemplar",nullable = false,length = 40)
 	private String NEjemplar;
 	
-	@Column(name="ImagenRuta",nullable = true,length = 40)
+	@Column(name="ImagenRuta",nullable = true)
 	private String ImagenRuta;
 	
 	@ManyToOne
