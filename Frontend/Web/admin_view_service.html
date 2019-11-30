@@ -87,32 +87,28 @@
                              </div>
                              <div class="body">
                                 <div class="row clearfix">
-                                    <div class="col-lg-3 col-md-6">
+                                    <div class="col-lg-3 col-md-4">
                                         <p> <b>Engineer Name</b> </p>
-                                        <select class="form-control show-tick ms select2" data-placeholder="Select">
-                                            <option></option>
-                                            <option>Engineer Example 1</option>
-                                            <option>Engineer Example 2</option>         <!-- Lista de Ingenieros para realizar el filtro -->
-                                            <option>Engineer Example 3</option>
-                                        </select>
+                                        <input type="text" class="form-control"  placeholder="Buscar por ingeniero" id="filtroingeniero" > 
                                     </div>
-                                    <div class="col-lg-3 col-md-6">
+                                    <div class="col-lg-3 col-md-4">                                     
                                         <p> <b>Hospital</b> </p>
-                                        <select class="form-control show-tick ms select2" data-placeholder="Select">
-                                            <option></option>
-                                            <option>Hospital Example 1</option>
-                                            <option>Hospital Example 2</option>         <!--  Lista de Hospitales los cuales serviran para hacer el filtro -->
-                                            <option>Hospital Example 3</option>
-                                        </select>
+                                        <input type="text" class="form-control" placeholder="Hospital"  id="filtrohospital" > 
                                     </div>
-                                    <div class="col-lg-3 col-md-6">
+                                    <div class="col-lg-2 col-md-4">
                                         <p> <b>Service Date Start</b> </p>
-                                        <input type="date" class="form-control" placeholder="Service Date Start" name="Service Date Start" required>    
+                                        <input type="date" class="form-control" placeholder="Service Date Start"  id="filtrofechainicio">    
                                     </div>
-                                    <div class="col-lg-3 col-md-6">
+                                    <div class="col-lg-2 col-md-4">
                                         <p> <b>Service Date End</b> </p>
-                                        <input type="date" class="form-control" placeholder="Service Date End" name="Service Date End" required>  
+                                        <input type="date" class="form-control" placeholder="Service Date End"  id="filtrofechafin" >  
                                     </div>
+                                    <div class="col-lg-2 col-md-4">    
+                                            <p> <b>Accion</b> </p>                               
+                                        <button type="button" class="btn bg-purple btn-block waves-effect" onclick="BuscarIngeniero()" data-toggle="modal" data-target="#addevent">Filtrar</button>
+                                        <button type="button" class="btn bg-purple btn-block waves-effect" onclick="LimpiarCampos()" data-toggle="modal" data-target="#addevent">Limpiar</button>
+                                    </div>
+                                
                                 </div>
                             </div>
                         </div>
@@ -123,7 +119,7 @@
                                     <thead>
                                         <tr class="bg-purple">
                                             <th>#Service Code</th>
-                                            <th>Engineer Name</th>
+                                            <th>Hospital</th>
                                             <th>Medical Equipment</th>
                                             <th>Area</th>
                                             <th>Hospital</th>
@@ -135,7 +131,7 @@
                                         </tr>
                                     </thead>
                                     <tbody id="contTablaServicios">
-                                        
+                                       
                                     </tbody>
                                 </table>
                             </div>
