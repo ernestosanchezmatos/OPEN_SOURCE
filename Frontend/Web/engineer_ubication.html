@@ -84,7 +84,7 @@
                                 <h2> <strong>Where's</strong> my Engineer </h2>
                             </div>
                             <div class="body">
-                                <div id="gmap_basic_example" class="gmap"></div>  <!-- Mapa que deberia mostrar al Ingeniero con sus latitud y longitud -->
+                                <div id="map" ></div>  <!-- Mapa que deberia mostrar al Ingeniero con sus latitud y longitud -->
                             </div>
                         </div>
                     </div>
@@ -95,20 +95,41 @@
         </div>
     </section>
 
+    <style>
+        /* Set the size of the div element that contains the map */
+        #map {
+          height: 750px;  /* The height is 750 pixels */
+          width: 100%;  /* The width is the width of the web page */
+         }
+      </style>
 
+    <script>
+        // Initialize and add the map
+        function initMap() {
+          // The location of the engineer
+          var engineerposition = {lat: -12.073789, lng: -77.080516};//con el axios obtener el dato por id, llama al valor latitud y longitud
+          // The map, centered at the engineer
+          var map = new google.maps.Map(
+              document.getElementById('map'), {zoom: 17, center: engineerposition});
+          // The marker, positioned at the engineer
+          var marker = new google.maps.Marker({position: engineerposition, map: map});
+        }
+            </script>
+            <script async defer
+            src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAa3xxbDS1aYG3MjnfiPntmP3Glf5hsCKs&callback=initMap">
+            </script>
+
+    
 <!-- Jquery Core Js --> 
 <script src="assets/bundles/libscripts.bundle.js"></script> <!-- Lib Scripts Plugin Js ( jquery.v3.2.1, Bootstrap4 js) --> 
 <script src="assets/bundles/vendorscripts.bundle.js"></script> <!-- slimscroll, waves Scripts Plugin Js -->
-
-
-<script src="https://maps.google.com/maps/api/js?v=3&sensor=false"></script> <!-- Google Maps API Js --> 
 <script src="assets/bundles/jvectormap.bundle.js"></script> <!-- JVectorMap Plugin Js -->
 <script src="assets/bundles/sparkline.bundle.js"></script> <!-- Sparkline Plugin Js -->
 <script src="assets/bundles/c3.bundle.js"></script>
-<script src="assets/plugins/gmaps/gmaps.js"></script> <!-- GMaps PLugin Js --> 
+
 
 <script src="assets/bundles/mainscripts.bundle.js"></script>
 <script src="assets/js/pages/index.js"></script>
-<script src="assets/js/pages/maps/google.js"></script> 
+
 </body>
 </html>
