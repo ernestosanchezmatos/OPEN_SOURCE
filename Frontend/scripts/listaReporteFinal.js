@@ -1,11 +1,31 @@
 document.addEventListener("DOMContentLoaded", indexMain, false);
 var lstaServicios=[];
 
+function HtmlPuntaje(puntos){
+    var puntuaciones=``;
+    for (var i=0;i<puntos;i++){
+        puntuaciones+=`
+        <a  class="icon" >
+              <i class="zmdi zmdi-star" >                                            
+              </i>
+        </a>`;
+     }
+     for (var i=puntos;i<5;i++){
+        puntuaciones+=`
+        <a  class="icon" >
+              <i class="zmdi zmdi-star-outline" >                                            
+              </i>
+        </a>`;
+     }
+
+     return puntuaciones;
+}
 function indexMain(){
     var _objUsuario=localStorage.getItem("usuario");
     var objUsuario=JSON.parse(_objUsuario);
     console.log(objUsuario);
     var contTablaServicios=document.getElementById('contTablaServicios');
+   
 
     axios.get('http://localhost:8081/ordenes')
     .then(data=>{
@@ -16,22 +36,35 @@ function indexMain(){
       //  var imgUsuario=document.getElementById('imgUsuario');  
        // imgUsuario.innerHTML=`<img src="${objUsuario.imagenRuta}">`;
         
-        for (var i=0;i<rpta.length;i++){            
-            contTablaServicios.innerHTML+=`<tr>
-            <th scope="row">${lstaServicios[i].ordenId}</th>    
-            <td>${lstaServicios[i].cliente.persona.npersona}</td>
-            <td>${lstaServicios[i].ejemplar.nejemplar}</td>          
-            <td>${lstaServicios[i].empleado.persona.npersona}</td>
-            <td>${lstaServicios[i].fechaGeneracion}</td>
-            <td>${lstaServicios[i].fechaEjecucion}</td>            
-            <td>
-                <a href="form-validation.html" button class="btn btn-primary btn-sm"><i class="zmdi zmdi-edit"></i></button></a>
-                <a button class="btn btn-danger btn-sm"> <i class="zmdi zmdi-delete" ></i></button></a>
-            </td>
-            </tr>`;
+        for (var i=0;i<rpta.length;i++){  
+              
+            var puntos=Number(lstaServicios[i].numPuntaje);
+            var htmlputanje= HtmlPuntaje(puntos);
+           console.log(htmlputanje);
+         
+            if (lstaServicios[i].estadoFinalizado==true){
+                contTablaServicios.innerHTML+=`<tr>
+                <th scope="row">${lstaServicios[i].ordenId}</th>    
+
+                <td>${lstaServicios[i].cliente.persona.npersona}</td>
+                <td>${lstaServicios[i].empleado.persona.npersona}</td>
+                <td>${lstaServicios[i].fechaFinalizacion}</td>                     
+                <td>${lstaServicios[i].ejemplar.nejemplar}</td>
+                <td>${htmlputanje}</td>
+
+
+                        
+                <td>
+                    <a href="form-validation.html" button class="btn btn-primary btn-sm"><i class="zmdi zmdi-edit"></i></button></a>
+                    <a button class="btn btn-danger btn-sm"> <i class="zmdi zmdi-delete" ></i></button></a>
+                </td>
+                </tr>`;
+            }  
+           
         }
     });
 }
+
 
 function BuscarIngeniero(){
     var contTablaServicios=document.getElementById('contTablaServicios');

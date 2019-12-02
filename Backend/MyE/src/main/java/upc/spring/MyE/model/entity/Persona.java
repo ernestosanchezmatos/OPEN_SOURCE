@@ -27,24 +27,24 @@ public class Persona  implements Serializable{
 	@Column(name="PersonaId",nullable = false)
 	private Integer PersonaId; 
 	
-	@Column(name="NPersona",nullable = false,length = 40)
+	@Column(name="NPersona",nullable = true,length = 40)
 	private String NPersona;
 	
 	@Column(name="ImagenRuta",nullable = true)
 	private String ImagenRuta;
 	//PARA LOGIN
-	@Column(name="Psw",nullable = false,length = 40)
+	@Column(name="Psw",nullable = true,length = 40)
 	private String Psw;
 	
-	@Column(name="NombreUsuario",nullable = false,length = 40)
+	@Column(name="NombreUsuario",nullable = true,length = 40)
 	private String NombreUsuario;
 	
 	//
-	@Column(name="NumContacto",nullable = false,length = 40)
+	@Column(name="NumContacto",nullable = true)
 	private Integer NumContacto;
 	
 	@ManyToOne(fetch = FetchType.EAGER)
-	@JoinColumn(name="LugarId", nullable = false)	
+	@JoinColumn(name="LugarId", nullable = true)	
 	private Lugar Lugar;
 
 	public Integer getPersonaId() {

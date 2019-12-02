@@ -45,7 +45,7 @@ public class Orden implements Serializable {
 	@Column(name="FechaGeneracion",nullable = true)
 	private Date FechaGeneracion;
 	
-	@Column(name="NumPuntaje",nullable = true,length = 40)
+	@Column(name="NumPuntaje",nullable = true)
 	private Integer NumPuntaje;
 	
 	@Column(name="FechaEjecucion",nullable = true,length = 40)

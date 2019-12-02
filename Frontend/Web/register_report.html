@@ -106,21 +106,28 @@
                            
                         </div>
                         <div class="body">
-                            <form id="form_validation" method="POST">
-                                <div>
-                                    <div class="form-group form-float">
-                                     <select class="form-control show-tick">
-                                         <option value=""> #Order </option>
-                                         <option value="1">Oder Example</option>                <!-- Campo que mostrara el numero de orden--> 
-                                         <option value="2">Order Example 2</option>
-                                     </select>
-                                     <div>
-                                        <tr>                                                                                                                                
-                                            <td><button class="btn bg-purple btn-primary waves-effect" data-type="success">Select Order</button></td>     <!-- Boton que mostraria mas detalles --> 
-                                           </tr>
-                                     </div>
-                                   </div>
-                                 </div>
+                            
+                                <div class="body">
+                                    <div class="table-responsive">
+                                        <table class="table">
+                                            <thead>
+                                                <tr class="bg-purple">
+                                                    <th>#Select</th>
+                                                    <th>#Id</th>
+                                                    <th>Hospital</th>
+                                                    <th>Medical Equipment</th>
+                                                    <th>Engineer</th>
+                                                    <th>Order Service Date</th>                                       <!-- Atributos del Servicio -->
+                                                    <th>Service Date</th> 
+                                                    <th>Action</th> 
+                                                </tr>
+                                            </thead>
+                                            <tbody id="contTablaServicios">
+                                               
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
                                  
                              
                                
@@ -132,44 +139,12 @@
                         <div class="header">
                             <h2><strong>Order</strong> Rating</h2>
                         </div>
-                        <div class="body">
-                            <form class="rating">
-                                <label>
-                                    <input type="radio" name="stars" value="1" />
-                                    <span class="icon"><i class="zmdi zmdi-star"></i></span>
-                                </label>
-                                <label>
-                                    <input type="radio" name="stars" value="2" />
-                                    <span class="icon"><i class="zmdi zmdi-star"></i></span>
-                                    <span class="icon"><i class="zmdi zmdi-star"></i></span>
-                                </label>
-                                <label>
-                                    <input type="radio" name="stars" value="3" />
-                                    <span class="icon"><i class="zmdi zmdi-star"></i></span>
-                                    <span class="icon"><i class="zmdi zmdi-star"></i></span>
-                                    <span class="icon"><i class="zmdi zmdi-star"></i></span>   
-                                </label>
-                                <label>
-                                    <input type="radio" name="stars" value="4" />
-                                    <span class="icon"><i class="zmdi zmdi-star"></i></span>
-                                    <span class="icon"><i class="zmdi zmdi-star"></i></span>
-                                    <span class="icon"><i class="zmdi zmdi-star"></i></span>
-                                    <span class="icon"><i class="zmdi zmdi-star"></i></span>
-                                </label>
-                                <label>
-                                    <input type="radio" name="stars" value="5" />
-                                    <span class="icon"><i class="zmdi zmdi-star"></i></span>
-                                    <span class="icon"><i class="zmdi zmdi-star"></i></span>
-                                    <span class="icon"><i class="zmdi zmdi-star"></i></span>
-                                    <span class="icon"><i class="zmdi zmdi-star"></i></span>
-                                    <span class="icon"><i class="zmdi zmdi-star"></i></span>
-                                </label>
-                            </form>
+                        <div class="body" id="puntuaciones">
+                                
                         </div>
                     </div>
                 </div>
-            </div>
-                                                                                                                                         <!-- Direccion del Hospital -->                   
+            </div>                                                                                                                                   <!-- Direccion del Hospital -->                   
                          
                                 <div class="form-group form-float">                                                                              <!-- Descripcion del servicio en el cual tambien puede ir algun tipo de comentario para el ingeniero al realizar el servicio --> 
                                     <textarea name="description" cols="30" rows="5" placeholder="Comments" class="form-control no-resize" required></textarea>
@@ -179,12 +154,11 @@
                                     <div class="row clearfix js-sweetalert">
                                          <table class="table table-hover mb-0 c_table">
                                                 <tr>                                                                                                                                
-                                                 <td><button class="btn bg-purple btn-primary waves-effect" data-type="success">Submit</button></td>     <!-- Boton que registra el servicio --> 
+                                                 <td><button class="btn bg-purple btn-primary waves-effect" onclick="RegReporteFinal()" >Submit</button></td>     <!-- Boton que registra el servicio --> 
                                                 </tr>
                                         </table>
                                     </div>
-                                </div> 
-                            </form>
+                                </div>                            
                         </div>
                     </div>
                 </div>
@@ -218,5 +192,7 @@
 <script src="assets/js/pages/ui/sweetalert.js"></script>
 <script src="assets/js/pages/forms/basic-form-elements.js"></script>
 <script src="assets/plugins/select2/select2.min.js"></script> 
+<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+<script src="../scripts/insertarReporte.js"></script>
 </body>
 </html>

@@ -29,8 +29,8 @@ public class Empleado implements Serializable{
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Integer EmpleadoId;
 	
-	@OneToOne(cascade=CascadeType.ALL)
-	@JoinColumn(name="PersonaId")		
+	@OneToOne
+	@JoinColumn(name="PersonaId",nullable = true)		
 	private Persona Persona;
 	
 	@Column(name="DNI",nullable = false)
