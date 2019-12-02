@@ -104,22 +104,38 @@
       </style>
 
     <script>
+
+function success(position) {
+      var latitude  = position.coords.latitude;
+      var longitude = position.coords.longitude;
+  
+      
+    };
+  
+    
+
         // Initialize and add the map
         function initMap() {
+            var position;
           // The location of the engineer
-          var engineerposition = {lat: -12.073789, lng: -77.080516};//con el axios obtener el dato por id, llama al valor latitud y longitud
+          var engineerposition = {lat: position.coords.latitude, lng: position.coords.longitude};//con el axios obtener el dato por id, llama al valor latitud y longitud
           // The map, centered at the engineer
           var map = new google.maps.Map(
               document.getElementById('map'), {zoom: 17, center: engineerposition});
           // The marker, positioned at the engineer
           var marker = new google.maps.Marker({position: engineerposition, map: map});
         }
+
+
+
             </script>
             <script async defer
             src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAa3xxbDS1aYG3MjnfiPntmP3Glf5hsCKs&callback=initMap">
             </script>
 
     
+
+
 <!-- Jquery Core Js --> 
 <script src="assets/bundles/libscripts.bundle.js"></script> <!-- Lib Scripts Plugin Js ( jquery.v3.2.1, Bootstrap4 js) --> 
 <script src="assets/bundles/vendorscripts.bundle.js"></script> <!-- slimscroll, waves Scripts Plugin Js -->
