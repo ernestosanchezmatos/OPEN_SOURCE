@@ -51,9 +51,9 @@
                     </div>
                 </div>
             </li>
-            <li><a href="index.html"><i class="zmdi zmdi-home"></i><span>Home</span></a></li>
+            <li ><a href="index.html"><i class="zmdi zmdi-home"></i><span>Home</span></a></li>
             <li><a href="profile.html"><i class="zmdi zmdi-account"></i><span>My Profile</span></a></li>
-            <li><a href="admin_view_final_report.html"><i class="zmdi zmdi-file-text"></i><span>My Reports</span></a></li>
+            <li class="active open"><a href="admin_view_final_report.html"><i class="zmdi zmdi-file-text"></i><span>My Reports</span></a></li>
             <li><a href="Manage-Engineer-Accounts.html"><i class="zmdi zmdi-face"></i><span>My Engineers</span></a></li>
             <li><a href="see_engineer.html"><i class="zmdi zmdi-map"></i><span>See Engineers's Location</span></a></li>
             <li><a href="sign-in.html"><i class="zmdi zmdi-play-for-work"></i><span>Log Out</span></a></li>
@@ -68,7 +68,7 @@
 <section class="content">
     <div class="body_scroll">
         <div class="block-header">
-                    <h2>My Services</h2>
+                    <h2>My Final Reports</h2>
                 </div>
 
             </div>
@@ -77,13 +77,13 @@
                 <div class="col-sm-12">
                     <div class="card">
                         <div class="header">
-                            <h2><strong>Services</strong> List</h2>
+                            <h2><strong>My Final Report</strong> List</h2>
                             <ul class="header-dropdown">
                             </ul>
                             <!-- Boton para agregar un nuevo servicio -->
                             <div class="col-lg-4 col-md-6 col-sm-12">  
-                                <a href="form-validation.html">     
-                                    <button type="button" class="btn bg-purple btn-block waves-effect" data-toggle="modal" data-target="#addevent">New Service</button>
+                                <a href="register_report.html">     
+                                    <button type="button" class="btn bg-purple btn-block waves-effect" data-toggle="modal" data-target="#addevent">New Final Report</button>
                                 </a>
                              </div>
                              <div class="body">
@@ -119,16 +119,16 @@
                                 <table class="table">
                                     <thead>
                                         <tr class="bg-purple">
-                                            <th>#Service Code</th>
-                                            <th>Hospital</th>
-                                            <th>Medical Equipment</th>
+                                            <th>#Report Code</th>
+                                            <th>Entidad</th>
                                             <th>Engineer</th>
-                                            <th>Order Service Date</th>                                       <!-- Atributos del Servicio -->
-                                            <th>Service Date</th> 
+                                            <th>Report Date</th> 
+                                            <th>Sample</th>                                       <!-- Atributos del Reporte Final -->
+                                            <th>Rating</th>
                                             <th>Action</th> 
                                         </tr>
                                     </thead>
-                                    <tbody id="contTablaServicios">
+                                    <tbody id="contTablaServicios">                                <!--Aqui va la tabla de los Reportes Finales-->
                                        
                                     </tbody>
                                 </table>
