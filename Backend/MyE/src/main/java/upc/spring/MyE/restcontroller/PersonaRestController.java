@@ -1,5 +1,8 @@
 package upc.spring.MyE.restcontroller;
 
+import java.io.FileInputStream;
+import java.io.FileOutputStream;
+import java.nio.channels.FileChannel;
 import java.util.List;
 import java.util.Optional;
 
@@ -51,6 +54,7 @@ public class PersonaRestController {
 	public ResponseEntity<Object> save(@Valid @RequestBody Persona Persona){
 		try {
 			Persona tmp=PersonaServ.save(Persona);
+			tmp.setImagenRuta("D:\\"+Persona.getPersonaId().toString());
 			if(tmp!=null) {
 				return new ResponseEntity<Object>(HttpStatus.OK);
 			}else {

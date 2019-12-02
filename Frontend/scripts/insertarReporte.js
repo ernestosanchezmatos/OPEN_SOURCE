@@ -18,7 +18,7 @@ function InsertarReporteMain(){
        // imgUsuario.innerHTML=`<img src="${objUsuario.imagenRuta}">`;
         
         for (var i=0;i<rpta.length;i++){    
-            if (lstaServicios[i].estadoFinalizado==false){
+            if (lstaServicios[i].estadoFinalizado==false || lstaServicios[i].estadoFinalizado==null ){
                 var cod_Orden=lstaServicios[i].ordenId;
                 contTablaServicios.innerHTML+=`
                 <tr>

@@ -63,53 +63,59 @@ function SelLugar(){
 }
 
 function RegistrarIngeniero(){
-    var lugarSel=document.querySelector('input[name="lugarSel"]:checked').value;
-    var telefono=document.getElementById('telefono').value;
-    var nombreUsuario=document.getElementById('nombreUsuario').value;
-    var nombresApellidos=document.getElementById('nombresApellidos').value;
-    var password=document.getElementById('password').value;
-    var dni=document.getElementById('dni').value;
-    
-   var ruta1='http://localhost:8081/personas';
-   var ruta2='http://localhost:8081/empleados';
-   
-    
-    axios({
-        method:'post',
-        url:ruta1,
-        data:{       
-           npersona:nombresApellidos,
-           psw:password,
-           nombreUsuario:nombreUsuario,
-           lugar:{
-               lugarId:lugarSel
-           },
-           numContacto:telefono,
-        }
-        }).then(function(){
-            axios.get('http://localhost:8081/personas')
-            .then(dato=>{
-                var response=dato.data;console.log(response);
-                 idPersona=response[response.length-1].personaId;
+//     var imagen=new Image();
+//     var gaa =document.getElementsByClassName("imagen"); 
+ 
 
-                 var ruta2='http://localhost:8081/empleados';
-                 axios({
-                     method:'post',
-                     url:ruta2,
-                     data:{   
-                         empleadoId:"",
-                         dni:dni,
-                         estado:true,   
-                         persona:{
-                             personaId:idPersona
-                         },            
-                         latitud:-12.105002, 
-                         longitud:-76.963580,
-                     }
-                     }).then(data=>{
-                       window.location="./Manage-Engineer-Accounts.html";
-                  })
-            });
-            
-     })
+//   console.log(gaa);
+
+     var lugarSel=document.querySelector('input[name="lugarSel"]:checked').value;
+     var telefono=document.getElementById('telefono').value;
+     var nombreUsuario=document.getElementById('nombreUsuario').value;
+     var nombresApellidos=document.getElementById('nombresApellidos').value;
+     var password=document.getElementById('password').value;
+     var dni=document.getElementById('dni').value;
+  
+    var ruta1='http://localhost:8081/personas';
+
+ 
+  
+     axios({
+         method:'post',
+         url:ruta1,
+         data:{       
+            npersona:nombresApellidos,
+            psw:password,
+            nombreUsuario:nombreUsuario,
+            lugar:{
+                lugarId:lugarSel
+            },
+            numContacto:telefono,
+         }
+         }).then(function(){
+             axios.get('http://localhost:8081/personas')
+             .then(dato=>{
+                 var response=dato.data;console.log(response);
+                  idPersona=response[response.length-1].personaId;
+
+                  var ruta2='http://localhost:8081/empleados';
+                  axios({
+                      method:'post',
+                      url:ruta2,
+                      data:{   
+                          empleadoId:"",
+                          dni:dni,
+                          estado:true,   
+                          persona:{
+                              personaId:idPersona
+                          },            
+                          latitud:-12.105002, 
+                          longitud:-76.963580,
+                      }
+                      }).then(data=>{
+                        window.location="./Manage-Engineer-Accounts.html";
+                   })
+             });
+          
+      });
     }

@@ -41,8 +41,9 @@ function BuscarIngeniero(){
     var filtrohospital=String(document.getElementById('filtrohospital').value);
     filtrohospital=filtrohospital.toLowerCase();   
 
-    var filtrofechainicio=document.getElementById('filtrofechainicio').value;
-    var filtrofechafin=document.getElementById('filtrofechafin').value;
+   
+   // var filtrofechainicio=document.getElementById('filtrofechainicio').value;
+    //var filtrofechafin=document.getElementById('filtrofechafin').value;
 
     for (var i=0;i<lstaServicios.length;i++){     
         var nIngeniero=String(lstaServicios[i].empleado.persona.npersona);        
@@ -73,8 +74,8 @@ function LimpiarCampos(){
     filtroingeniero.value="";
     var filtrohospital=document.getElementById('filtrohospital');
     filtrohospital.value="";
-    var filtrofechainicio=document.getElementById('filtrofechainicio').value;
-    var filtrofechafin=document.getElementById('filtrofechafin').value;
+    //var filtrofechainicio=document.getElementById('filtrofechainicio').value;
+    //var filtrofechafin=document.getElementById('filtrofechafin').value;
     BuscarIngeniero();
     
 }
