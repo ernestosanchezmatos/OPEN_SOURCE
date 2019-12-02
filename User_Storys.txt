@@ -9,7 +9,7 @@ Eliminar Cuenta Ingeniero
 Inhabilitar Cuenta Ingeniero
 Listar Ingenieros
 Visualizar detalles ingeniero
-Realizar Pago
+
 
 
 ENCARGADO AREA
