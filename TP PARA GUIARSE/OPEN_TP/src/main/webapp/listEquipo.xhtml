@@ -1,0 +1,86 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:p="http://primefaces.org/ui">
+
+<ui:composition template="master.xhtml">
+
+	<ui:define name="title">
+        .:Listado de Equipos:.
+    </ui:define>
+
+	<ui:define name="titleCont">
+		<span>Listado de Equipo </span>
+	</ui:define>
+
+	<ui:define name="content">
+
+		<h:form>
+			<div class="row">
+				<div class="col-sm-4">
+					<div class="form-group">
+						<h:outputLabel for="Equipo" value="Equipos"
+							styleClass="control-label" />
+
+						<p:inputText autocomplete="off" id="Equipo"
+							styleClass="form-control"
+							value="#{EquipoController.Equipo.NEquipo}"
+							maxlength="50" />
+					</div>
+				</div>
+
+		<!--   	<div class="col-sm-8 text-right">
+					<div class="form-group box-main-btn">
+						<span style="display: block; height: 30px;"></span>
+						<p:commandButton value="Limpiar" update="lstEquipo"
+							actionListener="#{EquipoController.clean()}"
+							styleClass="btn btn-default" ajax="false" />
+
+						<p:commandButton value="Buscar" update="lstEquipo"
+							actionListener="#{EquipoController.findbyname()}"
+							styleClass="btn btn-default btn-border" ajax="true" />
+
+						<p:commandButton value="Nuevo"
+							action="#{EquipoController.newEquipo()}"
+							styleClass="btn btn-primary" ajax="false" />
+					</div>
+				</div>  --> 
+			</div>
+			 
+			<div class="row">
+				<div class="col-sm-12">
+					<div class="form-group table-responsive box-table-class">
+					<p:dataTable id="listEquipo" var="equipo"
+							value="#{equipoController.listEquipo}" paginator="true"
+							paginatorPosition="top" rowsPerPageTemplate="10,20,30,40,50"
+							rows="10" styleClass="table table-bordered"
+							emptyMessage="No existen registros" rowIndexVar="item"
+							style="margin-bottom:0">
+							<p:column headerText="Id">
+								<h:outputText value="#{equipo.equipoId}" />
+							</p:column>
+
+							<p:column headerText="Nombre">
+								<h:outputText value="#{equipo.NEquipo}" />
+							</p:column>
+						
+							
+						</p:dataTable>
+
+						
+
+					</div>
+
+				</div>  
+			</div>
+			
+		</h:form>
+	</ui:define>
+
+	<ui:define name="footerCont">
+
+	</ui:define>
+</ui:composition>
+</html>
