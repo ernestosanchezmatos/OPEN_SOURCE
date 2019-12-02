@@ -39,49 +39,89 @@ public class Empleado implements Serializable{
 	@Column(name="Estado",nullable = false)
 	private Boolean Estado;
 
-	public Integer getEmpleadoId() {
-		return EmpleadoId;
-	}
+	@Column(name="Latitud",nullable = true)
+	private Double Latitud;
+	
+	@Column(name="Longitud",nullable = true)
+	private Double Longitud;
 
-	public void setEmpleadoId(Integer empleadoId) {
-		EmpleadoId = empleadoId;
-	}
 
-	public Persona getPersona() {
-		return Persona;
-	}
-
-	public void setPersona(Persona persona) {
-		Persona = persona;
-	}
-
-	public Integer getDNI() {
-		return DNI;
-	}
-
-	public void setDNI(Integer dNI) {
-		DNI = dNI;
-	}
-
-	public Boolean getEstado() {
-		return Estado;
-	}
-
-	public void setEstado(Boolean estado) {
-		Estado = estado;
-	}
-
-	public static long getSerialversionuid() {
-		return serialVersionUID;
-	}
-
-	public Empleado(Integer empleadoId, upc.spring.MyE.model.entity.Persona persona, Integer dNI, Boolean estado) {
+	public Empleado(Integer empleadoId, upc.spring.MyE.model.entity.Persona persona, Integer dNI, Boolean estado,
+			Double latitud, Double longitud) {
 		super();
 		EmpleadoId = empleadoId;
 		Persona = persona;
 		DNI = dNI;
 		Estado = estado;
+		Latitud = latitud;
+		Longitud = longitud;
 	}
+
+
+	public Integer getEmpleadoId() {
+		return EmpleadoId;
+	}
+
+
+	public void setEmpleadoId(Integer empleadoId) {
+		EmpleadoId = empleadoId;
+	}
+
+
+	public Persona getPersona() {
+		return Persona;
+	}
+
+
+	public void setPersona(Persona persona) {
+		Persona = persona;
+	}
+
+
+	public Integer getDNI() {
+		return DNI;
+	}
+
+
+	public void setDNI(Integer dNI) {
+		DNI = dNI;
+	}
+
+
+	public Boolean getEstado() {
+		return Estado;
+	}
+
+
+	public void setEstado(Boolean estado) {
+		Estado = estado;
+	}
+
+
+	public Double getLatitud() {
+		return Latitud;
+	}
+
+
+	public void setLatitud(Double latitud) {
+		Latitud = latitud;
+	}
+
+
+	public Double getLongitud() {
+		return Longitud;
+	}
+
+
+	public void setLongitud(Double longitud) {
+		Longitud = longitud;
+	}
+
+
+	public static long getSerialversionuid() {
+		return serialVersionUID;
+	}
+
 
 	public Empleado() {
 		super();

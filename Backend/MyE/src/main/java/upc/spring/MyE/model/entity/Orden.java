@@ -42,7 +42,7 @@ public class Orden implements Serializable {
 	@Column(name="NServicio",nullable = false,length = 40)
 	private String NServicio;
 
-	@Column(name="FechaGeneracion",nullable = true,length = 40)
+	@Column(name="FechaGeneracion",nullable = true)
 	private Date FechaGeneracion;
 	
 	@Column(name="NumPuntaje",nullable = true,length = 40)
@@ -51,27 +51,11 @@ public class Orden implements Serializable {
 	@Column(name="FechaEjecucion",nullable = true,length = 40)
 	private Date FechaEjecucion;
 
-	public Orden(Integer ordenId, upc.spring.MyE.model.entity.Empleado empleado,
-			upc.spring.MyE.model.entity.Cliente cliente, upc.spring.MyE.model.entity.Ejemplar ejemplar,
-			String nServicio, Date fechaGeneracion, Integer numPuntaje, Date fechaEjecucion) {
-		super();
-		OrdenId = ordenId;
-		Empleado = empleado;
-		Cliente = cliente;
-		Ejemplar = ejemplar;
-		NServicio = nServicio;
-		FechaGeneracion = fechaGeneracion;
-		NumPuntaje = numPuntaje;
-		FechaEjecucion = fechaEjecucion;
-	}
+	@Column(name="EstadoFinalizado",nullable = true)
+	private Boolean EstadoFinalizado;
 
-	public Integer getNumPuntaje() {
-		return NumPuntaje;
-	}
-
-	public void setNumPuntaje(Integer numPuntaje) {
-		NumPuntaje = numPuntaje;
-	}
+	@Column(name="FechaFinalizacion",nullable = true)
+	private Date FechaFinalizacion;
 
 	public Integer getOrdenId() {
 		return OrdenId;
@@ -121,6 +105,14 @@ public class Orden implements Serializable {
 		FechaGeneracion = fechaGeneracion;
 	}
 
+	public Integer getNumPuntaje() {
+		return NumPuntaje;
+	}
+
+	public void setNumPuntaje(Integer numPuntaje) {
+		NumPuntaje = numPuntaje;
+	}
+
 	public Date getFechaEjecucion() {
 		return FechaEjecucion;
 	}
@@ -129,15 +121,48 @@ public class Orden implements Serializable {
 		FechaEjecucion = fechaEjecucion;
 	}
 
+	public Boolean getEstadoFinalizado() {
+		return EstadoFinalizado;
+	}
+
+	public void setEstadoFinalizado(Boolean estadoFinalizado) {
+		EstadoFinalizado = estadoFinalizado;
+	}
+
+	public Date getFechaFinalizacion() {
+		return FechaFinalizacion;
+	}
+
+	public void setFechaFinalizacion(Date fechaFinalizacion) {
+		FechaFinalizacion = fechaFinalizacion;
+	}
+
 	public static long getSerialversionuid() {
 		return serialVersionUID;
+	}
+
+	public Orden(Integer ordenId, upc.spring.MyE.model.entity.Empleado empleado,
+			upc.spring.MyE.model.entity.Cliente cliente, upc.spring.MyE.model.entity.Ejemplar ejemplar,
+			String nServicio, Date fechaGeneracion, Integer numPuntaje, Date fechaEjecucion, Boolean estadoFinalizado,
+			Date fechaFinalizacion) {
+		super();
+		OrdenId = ordenId;
+		Empleado = empleado;
+		Cliente = cliente;
+		Ejemplar = ejemplar;
+		NServicio = nServicio;
+		FechaGeneracion = fechaGeneracion;
+		NumPuntaje = numPuntaje;
+		FechaEjecucion = fechaEjecucion;
+		EstadoFinalizado = estadoFinalizado;
+		FechaFinalizacion = fechaFinalizacion;
 	}
 
 	public Orden() {
 		super();
 		// TODO Auto-generated constructor stub
 	}
-
+	
 	
 	
 }
