@@ -133,3 +133,24 @@ function SelIngeniero(){
     }    
 }
 
+function SelIngeniero(){   
+    var listaingenieros=document.querySelector('input[name="listaingenieros"]:checked').value;    
+    var nombreIngeniero=document.getElementById('nombreIngeniero');
+    for(var i=0;i<lstaIngenieros.length;i++){
+        if (lstaIngenieros[i].empleadoId==listaingenieros){
+            nombreIngeniero.value=lstaIngenieros[i].persona.npersona;
+        }
+    }    
+}
+
+
+function SelOrder()
+{
+    var listaingenieros=document.querySelector('input[name="listaingenieros"]:checked').value;    
+    var nombreIngeniero=document.getElementById('nombreIngeniero');
+    for(var i=0;i<lstaIngenieros.length;i++){
+        if (lstaIngenieros[i].empleadoId==listaingenieros){
+            nombreIngeniero.value=lstaIngenieros[i].persona.npersona;
+        }
+    }    
+}

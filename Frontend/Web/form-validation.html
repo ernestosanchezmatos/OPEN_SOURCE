@@ -83,7 +83,7 @@
     <div class="modal-dialog modal-lg" role="document">
         <div class="modal-content">
             <div class="modal-header">
-                <h5 class="pricing-title">Seleccionar Entidad</h5>
+                <h5 class="pricing-title">Selecct Engineer</h5>
             </div>
             <div class="modal-body">
 				<div class="container-fluid">
@@ -94,9 +94,9 @@
                                     <thead>
                                         <tr class="bg-purple">  
                                             <th>Sel.</th>
-                                            <th>Nombre de Entidad</th>
-                                            <th>Dirección</th>
-                                            <th>Numero de Contacto</th>
+                                            <th>Engineer</th>
+                                            <th>Contact Number</th>
+                                            <th>Address</th>
                                             <th></th>
                                         </tr>
                                     </thead>
@@ -113,7 +113,7 @@
             </div>
             
             <div class="modal-footer">
-                <button type="button" onclick="SelIngeniero()" class="btn btn-danger waves-effect" data-dismiss="modal">Aceptar</button>
+                <button type="button" onclick="SelIngeniero()" class="btn btn-danger waves-effect" data-dismiss="modal">Accept</button>
             </div>
         </div>
     </div>
@@ -123,7 +123,7 @@
         <div class="modal-dialog modal-lg" role="document">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="pricing-title">Seleccionar Entidad</h5>
+                    <h5 class="pricing-title">Select Hospital</h5>
                 </div>
                 <div class="modal-body">
                     <div class="container-fluid">
@@ -137,9 +137,9 @@
                                         <thead>
                                             <tr class="bg-purple">  
                                                 <th>Sel.</th>
-                                                <th>Nombre de Entidad</th>
-                                                <th>Dirección</th>
-                                                <th>Numero de Contacto</th>
+                                                <th>Hospital</th>
+                                                <th>Contact Number</th>
+                                                <th>Address</th>
                                                 <th></th>
                                             </tr>
                                         </thead>
@@ -155,7 +155,7 @@
                     </div>
                 </div>
                 <div class="modal-footer">
-                    <button type="button" onclick="SelHospital()" class="btn btn-danger waves-effect" data-dismiss="modal">Aceptar</button>
+                    <button type="button" onclick="SelHospital()" class="btn btn-danger waves-effect" data-dismiss="modal">Accept</button>
                 </div>
             </div>
         </div>
@@ -165,7 +165,7 @@
             <div class="modal-dialog modal-lg" role="document">
                 <div class="modal-content">
                     <div class="modal-header">
-                        <h5 class="pricing-title">Seleccionar Entidad</h5>
+                        <h5 class="pricing-title">Select Medical Equipment</h5>
                     </div>
                     <div class="modal-body">
                         <div class="container-fluid">
@@ -179,9 +179,9 @@
                                             <thead>
                                                 <tr class="bg-purple">  
                                                     <th>Sel.</th>
-                                                    <th>Nombre de Entidad</th>
-                                                    <th>Dirección</th>
-                                                    <th>Numero de Contacto</th>
+                                                    <th>Exemplar</th>
+                                                    <th>Exemplar Code</th>
+                                                    <th>Medical Equipment</th>
                                                     <th></th>
                                                 </tr>
                                             </thead>
@@ -197,7 +197,7 @@
                         </div>
                     </div>
                     <div class="modal-footer">
-                        <button type="button" onclick="SelEjemplar()" class="btn btn-danger waves-effect" data-dismiss="modal">Aceptar</button>
+                        <button type="button" onclick="SelEjemplar()" class="btn btn-danger waves-effect" data-dismiss="modal">Accept</button>
                     </div>
                 </div>
             </div>
@@ -218,22 +218,22 @@
                         <div class="body">
                            
                                 <div>                                   
-                                            <input type="text" class="form-control"  placeholder="Nombre de ingeniero" id="nombreIngeniero" disabled > 
+                                            <input type="text" class="form-control"  placeholder="Engineer..." id="nombreIngeniero" disabled > 
                                      <div>
                                         <tr>                                                                                                                                
                                             <td>
-                                                    <button type="button" class="btn btn-default waves-effect m-r-20" data-toggle="modal" data-target="#popupIngenieros" >Sel. Ingeniero</button>
+                                                    <button type="button" class="btn btn-default waves-effect m-r-20" data-toggle="modal" data-target="#popupIngenieros" >Sel. Engineer</button>
                                             </td>     <!-- Boton que registra el servicio --> 
                                            </tr>
                                      </div>                                 
                                  </div>
                                  <br>
                                  <div>                                   
-                                            <input type="text" class="form-control"  placeholder="Nombre de ejemplar" id="nombreEjemplar" disabled > 
+                                            <input type="text" class="form-control"  placeholder="Exemplar..." id="nombreEjemplar" disabled > 
                                      <div>
                                             <tr>                                                                                                                                
                                                 <td>
-                                                        <button type="button" class="btn btn-default waves-effect m-r-20" data-toggle="modal" data-target="#popupEjemplares" >Sel. Ejemplar</button>
+                                                        <button type="button" class="btn btn-default waves-effect m-r-20" data-toggle="modal" data-target="#popupEjemplares" >Sel. Exemplar</button>
                                                 </td>     
                                             </tr>
                                      </div>
@@ -241,7 +241,7 @@
                                  </div>                             
                                  <br>
                                 <div>                                   
-                                    <input type="text" class="form-control"  placeholder="Nombre de hospital" id="nombreHospital" disabled > 
+                                    <input type="text" class="form-control"  placeholder="Hospital..." id="nombreHospital" disabled > 
                                     <div>
                                         <tr>                                                                                                                                
                                             <td>
